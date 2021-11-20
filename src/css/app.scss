@@ -1,0 +1,119 @@
+// app global css in SCSS form
+.brx {
+  border: 1px solid red;
+}
+.fontU {
+  text-decoration: underline;
+}
+.fontB {
+  font-weight: bold;
+}
+.font14 {
+  font-size: 14px;
+}
+.font16 {
+  font-size: 16px;
+}
+.font18 {
+  font-size: 18px;
+}
+.font20 {
+  font-size: 20px;
+}
+.font24 {
+  font-size: 24px;
+}
+.font30 {
+  font-size: 30px;
+}
+.font36 {
+  font-size: 36px;
+}
+.font42 {
+  font-size: 42px;
+}
+.font48 {
+  font-size: 48px;
+}
+.font64 {
+  font-size: 64px;
+}
+.textWhite {
+  color: white;
+}
+// mobile
+.headerMobile {
+  position: fixed;
+  background-color: #1f2b35;
+  height: 50px;
+  width: 100%;
+}
+.lineMobile {
+  background-color: white;
+  width: 2px;
+  height: 37px;
+}
+.endMobile {
+  background: #1f2b35;
+  width: 100%;
+  height: 50px;
+}
+.socialIconMobile {
+  cursor: pointer;
+  color: #b5b5b5;
+  font-size: 28px;
+}
+//  Tablet
+.headerTablet {
+  position: fixed;
+  background-color: #1f2b35;
+  height: 60px;
+  width: 100%;
+}
+.lineTablet {
+  background-color: white;
+  width: 3px;
+  height: 41px;
+}
+.picHeadTablet {
+  width: 120px;
+  padding-top: 6px;
+}
+.endTablet {
+  background: #1f2b35;
+  width: 100%;
+  height: 70px;
+}
+// PC
+.headerPC {
+  position: fixed;
+  background-color: #1f2b35;
+  height: 86px;
+  max-width: 1600px;
+  width: 100%;
+}
+.linePC {
+  background-color: white;
+  width: 3px;
+  height: 55px;
+}
+.picHeadPC {
+  width: 180px;
+  padding-top: 6px;
+}
+.endPC {
+  background: #1f2b35;
+  width: 100%;
+  height: 70px;
+}
+.socialIconPC {
+  cursor: pointer;
+  color: #b5b5b5;
+  font-size: 50px;
+  margin-right: 20px;
+}
+.joinEnd {
+  color: #b6b6b6;
+  padding-right: 40px;
+  font-size: 24px;
+}
