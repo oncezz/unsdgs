@@ -103,7 +103,139 @@
           <div class="lineMenu"></div>
           <div class="contentPC q-pa-sm" style="">
             <!-- menu  -->
-            <div v-show="menu == 1">content</div>
+            <div v-show="menu == 1">
+              <q-list>
+                <q-expansion-item
+                  class="font18"
+                  group="somegroup"
+                  :label="nameLeeson[1]"
+                  default-opened
+                >
+                  <q-card>
+                    <q-card-section class="cardStyle">
+                      <ul>
+                        <li>
+                          Introduction to Sustain Development Goals (SDGs)
+                        </li>
+                        <li>SDGs and Trade</li>
+                        <li>Trade and sustainable development</li>
+                        <li>Summing up</li>
+                      </ul>
+                    </q-card-section>
+                  </q-card>
+                </q-expansion-item>
+                <q-separator />
+                <q-expansion-item
+                  class="font18"
+                  group="somegroup"
+                  :label="nameLeeson[2]"
+                >
+                  <q-card>
+                    <q-card-section class="cardStyle"> </q-card-section>
+                  </q-card>
+                </q-expansion-item>
+                <q-separator />
+                <q-expansion-item
+                  class="font18"
+                  group="somegroup"
+                  :label="nameLeeson[3]"
+                >
+                  <q-card>
+                    <q-card-section class="cardStyle"> </q-card-section>
+                  </q-card>
+                </q-expansion-item>
+                <q-separator />
+                <q-expansion-item
+                  class="font18"
+                  group="somegroup"
+                  :label="nameLeeson[4]"
+                >
+                  <q-card>
+                    <q-card-section class="cardStyle"> </q-card-section>
+                  </q-card>
+                </q-expansion-item>
+                <q-separator />
+                <q-expansion-item
+                  class="font18"
+                  group="somegroup"
+                  :label="nameLeeson[5]"
+                >
+                  <q-card>
+                    <q-card-section class="cardStyle"> </q-card-section>
+                  </q-card>
+                </q-expansion-item>
+                <q-separator />
+                <q-expansion-item
+                  class="font18"
+                  group="somegroup"
+                  :label="nameLeeson[6]"
+                >
+                  <q-card>
+                    <q-card-section class="cardStyle"> </q-card-section>
+                  </q-card>
+                </q-expansion-item>
+                <q-separator />
+                <q-expansion-item
+                  class="font18"
+                  group="somegroup"
+                  :label="nameLeeson[7]"
+                >
+                  <q-card>
+                    <q-card-section class="cardStyle"> </q-card-section>
+                  </q-card>
+                </q-expansion-item>
+                <q-separator />
+                <q-expansion-item
+                  class="font18"
+                  group="somegroup"
+                  :label="nameLeeson[8]"
+                >
+                  <q-card>
+                    <q-card-section class="cardStyle"> </q-card-section>
+                  </q-card>
+                </q-expansion-item>
+                <q-separator />
+                <q-expansion-item
+                  class="font18"
+                  group="somegroup"
+                  label="Module B.2.2:  Trade and sustainability 2: education and intergenerational mobility"
+                >
+                  <q-card>
+                    <q-card-section class="cardStyle"> </q-card-section>
+                  </q-card>
+                </q-expansion-item>
+                <q-separator />
+                <q-expansion-item
+                  class="font18"
+                  group="somegroup"
+                  label="Module B.3.1:  Does trade lead to a race to the bottom in labour standards?"
+                >
+                  <q-card>
+                    <q-card-section class="cardStyle"> </q-card-section>
+                  </q-card>
+                </q-expansion-item>
+                <q-separator />
+                <q-expansion-item
+                  class="font18"
+                  group="somegroup"
+                  label="Module B.3.2: How does trade influence productivity and innovation?"
+                >
+                  <q-card>
+                    <q-card-section class="cardStyle"> </q-card-section>
+                  </q-card>
+                </q-expansion-item>
+                <q-separator />
+                <q-expansion-item
+                  class="font18"
+                  group="somegroup"
+                  label="Module B.3.3: Trade and responsible consumption/production"
+                >
+                  <q-card>
+                    <q-card-section class="cardStyle"> </q-card-section>
+                  </q-card>
+                </q-expansion-item>
+              </q-list>
+            </div>
             <!-- narrative  -->
             <div v-show="menu == 2">narrative</div>
           </div>
@@ -139,14 +271,29 @@ export default {
     },
     menuPick2() {
       this.menu = 2;
-      this.selectContent = "narrative";
     },
+    lessonPick(le) {},
   },
   data() {
     return {
-      selectContent: "exam",
+      selectContent: "Module A-1: An overview",
       userName: "AUNNY",
       menu: 1, // 1=menu , 2=narrative
+      nameLeeson: [
+        "",
+        "Module A.1: An overview",
+        "Module A.2: Trade and development: tools and trends",
+        "Module A.3: Trade and environmental issues",
+        "Module A.4: Trade policy reforms and the SDGs",
+        "Module B.1.1:  How does trade affect poverty and inequality?",
+        "Module B.1.2:  Should we use trade restrictions to achieve zero hunger?",
+        "Module B.1.3:  Does international trade cause (inclusive) growth?",
+        "Module B.2.1:  Trade and sustainability 1: climate change and environment",
+        "Module B.2.2:  Trade and sustainability 2: education and intergenerational mobility",
+        "Module B.3.1:  Does trade lead to a race to the bottom in labour standards?",
+        "Module B.3.2: How does trade influence productivity and innovation?",
+        "Module B.3.3: Trade and responsible consumption/production",
+      ],
     };
   },
 };
@@ -169,7 +316,8 @@ export default {
   border-bottom: 1px solid #374d60;
 }
 .contentPC {
-  height: calc(100vh - 134px);
+  height: calc(100vh - 136px);
+  overflow-y: auto;
 }
 .endBarPC {
   position: absolute;
@@ -179,5 +327,12 @@ export default {
   height: 50px;
   width: 100%;
   background: #1f2b35;
+}
+.cardStyle {
+  background-color: #1f2b35;
+}
+li {
+  padding-top: 6px;
+  cursor: pointer;
 }
 </style>
