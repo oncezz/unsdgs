@@ -3,7 +3,7 @@
     <!-- mobile -->
     <div class="mobile-only lt-sm">
       <div class="headerMobile row items-center" style="z-index: 999">
-        <div class="col-4" align="center" style="">
+        <div class="col-4" align="center" style="" @click="goHome()">
           <img
             class=""
             src="../../public/image/logoMobile.svg"
@@ -16,6 +16,205 @@
           Trade and the sustainable development goals (SDGs)
         </div>
       </div>
+      <div style="height: 50px"></div>
+      <!-- end header  -->
+      <div class="row selectPageMobile">
+        <div
+          class="col"
+          v-show="selectPage != 'Info'"
+          align="center"
+          @click="pageInfo()"
+        >
+          Info
+        </div>
+        <div
+          class="col"
+          v-show="selectPage == 'Info'"
+          align="center"
+          @click="pageInfo()"
+          style="color: #5aadff; border-bottom: 5px solid #5aadff"
+        >
+          Info
+        </div>
+        <div
+          class="col"
+          align="center"
+          v-show="selectPage != 'Password'"
+          @click="pagePassword()"
+        >
+          Password
+        </div>
+        <div
+          class="col"
+          align="center"
+          v-show="selectPage == 'Password'"
+          @click="pagePassword()"
+          style="color: #5aadff; border-bottom: 5px solid #5aadff"
+        >
+          Password
+        </div>
+        <div
+          class="col"
+          v-show="selectPage != 'Certificate'"
+          align="center"
+          @click="pageCertificate()"
+        >
+          Certificate
+        </div>
+        <div
+          class="col"
+          v-show="selectPage == 'Certificate'"
+          align="center"
+          @click="pageCertificate()"
+          style="color: #5aadff; border-bottom: 5px solid #5aadff"
+        >
+          Certificate
+        </div>
+        <div class="col-4 q-pr-md q-pt-sm" align="right">
+          <img src="../../public/image/signOut.svg" alt="" />
+        </div>
+      </div>
+      <!-- content  -->
+      <!-- info  -->
+      <div v-show="selectPage == 'Info'" class="font12">
+        <div class="padInputMobile q-pt-md">
+          <q-input
+            style="width: 201px"
+            v-model="userData.username"
+            readonly
+            label="Username"
+          />
+        </div>
+        <div class="padInputMobile">
+          <q-input
+            style="width: 201px"
+            v-model="userData.email"
+            readonly
+            label="Email address"
+          />
+        </div>
+        <div class="padInputMobile">
+          <q-input
+            style="width: 201px"
+            v-model="userData.firstName"
+            label="First name"
+          />
+        </div>
+        <div class="padInputMobile">
+          <q-input
+            style="width: 201px"
+            v-model="userData.surName"
+            label="Surname"
+          />
+        </div>
+        <div class="padInputMobile">
+          <q-input
+            style="width: 201px"
+            v-model="userData.city"
+            label="City/Town"
+          />
+        </div>
+        <div class="padInputMobile">
+          <q-select
+            style="width: 201px"
+            v-model="userData.country"
+            :options="countryOptions"
+          />
+        </div>
+        <div class="padInputMobile">
+          <q-select
+            style="width: 201px"
+            v-model="userData.gender"
+            label="Gender"
+            :options="genderOptions"
+          />
+        </div>
+        <div class="padInputMobile">
+          <q-input
+            style="width: 201px"
+            v-model="userData.jobTitle"
+            label="Job title"
+          />
+        </div>
+        <div class="padInputMobile">
+          <q-input
+            style="width: 201px"
+            v-model="userData.organization"
+            label="Organization"
+          />
+        </div>
+        <div class="row q-pa-md justify-evenly q-mt-md">
+          <div class="cancelBtmMobile" align="center">Cancel</div>
+          <div class="saveBtmMobile" align="center" @click="saveInfo()">
+            Save
+          </div>
+        </div>
+      </div>
+      <!-- password  -->
+      <div v-show="selectPage == 'Password'">
+        <div class="padInputMobile q-pt-md">
+          <q-input
+            style="width: 201px"
+            v-model="userData.username"
+            input-style="color:#898989"
+            readonly
+            label="Username"
+          />
+        </div>
+        <div class="padInputMobile">
+          <q-input
+            style="width: 201px"
+            v-model="userData.email"
+            input-style="color:#898989"
+            readonly
+            label="Email address"
+          />
+        </div>
+        <div class="padInputMobile">
+          <q-input
+            style="width: 201px"
+            v-model="changePassword.oldPassword"
+            label="Old password"
+          />
+        </div>
+        <div class="padInputMobile">
+          <q-input
+            style="width: 201px"
+            v-model="changePassword.newPassword"
+            label="New password"
+          />
+        </div>
+        <div class="padInputMobile">
+          <q-input
+            style="width: 201px"
+            v-model="changePassword.confirmPassword"
+            label="Confirm new password"
+          />
+        </div>
+        <div class="row q-pa-md justify-evenly q-mt-md">
+          <div class="cancelBtmMobile" align="center">Cancel</div>
+          <div class="saveBtmMobile" align="center" @click="saveNewPassword()">
+            Save
+          </div>
+        </div>
+      </div>
+      <!-- caertificate  -->
+      <div v-show="selectPage == 'Certificate'" align="center" class="font18">
+        <div class="padTop">
+          Sorry! You must pass
+          <span class="fontU" style="color: blue" @click="goToExam"
+            >the exam.</span
+          >
+        </div>
+        <div>
+          <img
+            class="picBottomMobile"
+            src="../../public/image/mustPassExam.svg"
+            alt=""
+          />
+        </div>
+      </div>
+      <!-- ------------  -->
     </div>
     <!-- tablet  -->
     <div class="mobile-only gt-xs orientation-portrait">หมุนหน้าจอ</div>
@@ -206,7 +405,7 @@
               line-height: 50px;
             "
             align="center"
-            @click="svaeInfo()"
+            @click="saveInfo()"
           >
             Save
           </div>
@@ -294,7 +493,7 @@
               line-height: 50px;
             "
             align="center"
-            @click="svaeInfo()"
+            @click="saveNewPassword()"
           >
             Save
           </div>
@@ -380,11 +579,18 @@ export default {
     pageCertificate() {
       this.selectPage = "Certificate";
     },
-    svaeInfo() {
+    saveInfo() {
       this.$q.notify({
         position: "top",
         type: "positive",
         message: `Edit account complete.`,
+      });
+    },
+    saveNewPassword() {
+      this.$q.notify({
+        position: "top",
+        type: "positive",
+        message: `Change password complete.`,
       });
     },
   },
@@ -415,5 +621,42 @@ export default {
   cursor: pointer;
   color: blue;
   text-decoration: underline;
+}
+.selectPageMobile {
+  width: 100%;
+  height: 47px;
+  background-color: #1f2b35;
+  font-size: 14px;
+  color: white;
+  line-height: 40px;
+}
+.padTop {
+  padding-top: 107px;
+}
+.picBottomMobile {
+  width: 158px;
+  position: absolute;
+  bottom: 0px;
+  left: calc(50vw - 79px);
+}
+.cancelBtmMobile {
+  width: 130px;
+  height: 40px;
+  font-size: 18px;
+  line-height: 40px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+.saveBtmMobile {
+  width: 130px;
+  height: 40px;
+  font-size: 18px;
+  line-height: 40px;
+  background: #1976d2;
+  color: white;
+  border-radius: 5px;
+}
+.padInputMobile {
+  padding-left: 62px;
 }
 </style>
