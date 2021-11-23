@@ -19,7 +19,209 @@
     </div>
     <!-- tablet  -->
     <div class="mobile-only gt-xs orientation-portrait">หมุนหน้าจอ</div>
-    <div class="mobile-only gt-xs orientation-landscape">Tablet</div>
+    <div class="mobile-only gt-xs orientation-landscape">
+      <div class="headerTablet row items-center" style="z-index: 999">
+        <div
+          class="col-3 cursor-pointer"
+          align="center"
+          style=""
+          @click="goHome()"
+        >
+          <img
+            class="picHeadTablet"
+            src="../../public/image/logoMobile.svg"
+            alt=""
+            style=""
+          />
+        </div>
+        <div class="lineTablet"></div>
+        <div class="col q-px-md font18" style="color: white">
+          Trade and the sustainable development goals (SDGs)
+        </div>
+      </div>
+      <div class="q-pa-md" style="height: 60px"></div>
+      <!-- end header  -->
+      <div class="topBar row textWhite">
+        <div class="col q-pt-md q-pl-xl">
+          <div class="font30">
+            Trade and the sustainable development goals (SDGs)
+          </div>
+          <div class="font18 textWhite">
+            Learn about how to make trade works for all and environment<br />
+          </div>
+          <div class="font24 fontB q-pt-md">Sign up</div>
+          <div class="font18 fontU q-pt-sm" @click="goBack()">
+            back to course content page
+          </div>
+        </div>
+      </div>
+      <!-- content  -->
+      <div class="row font18 q-pt-lg">
+        <div class="col-2"></div>
+        <div class="col">
+          <div class="row padBox">
+            <div class="col-4 textB4input">Username</div>
+            <div class="col">
+              <q-input
+                class="inputBoxTablet"
+                outlined
+                v-model="userData.username"
+              />
+            </div>
+          </div>
+          <div class="row padBox">
+            <div class="col-4 textB4input">Password</div>
+            <div class="col">
+              <q-input
+                class="inputBoxTablet"
+                outlined
+                v-model="userData.password"
+              />
+              <div class="font14 q-pt-sm">
+                The password must have at least 6 characters.
+              </div>
+            </div>
+          </div>
+          <div class="row padBox">
+            <div class="col-4 textB4input">Email address</div>
+            <div class="col">
+              <q-input
+                class="inputBoxTablet"
+                outlined
+                v-model="userData.email"
+              />
+            </div>
+          </div>
+          <div class="row padBox">
+            <div class="col-4 textB4input">Confirm email address</div>
+            <div class="col">
+              <q-input class="inputBoxTablet" outlined v-model="confirmEmail" />
+            </div>
+          </div>
+          <div class="row padBox">
+            <div class="col-4 textB4input">First name</div>
+            <div class="col">
+              <q-input
+                class="inputBoxTablet"
+                outlined
+                v-model="userData.firstName"
+              />
+            </div>
+          </div>
+          <div class="row padBox">
+            <div class="col-4 textB4input">Surname</div>
+            <div class="col">
+              <q-input
+                class="inputBoxTablet"
+                outlined
+                v-model="userData.surName"
+              />
+            </div>
+          </div>
+          <div class="row padBox">
+            <div class="col-4 textB4input">City/Town</div>
+            <div class="col">
+              <q-input
+                class="inputBoxTablet"
+                outlined
+                v-model="userData.city"
+              />
+            </div>
+          </div>
+          <div class="row padBox">
+            <div class="col-4 textB4input">Country</div>
+            <q-select
+              class="inputBoxTablet"
+              outlined
+              v-model="userData.country"
+              :options="countryOptions"
+            />
+          </div>
+          <div class="row padBox">
+            <div class="col-4 textB4input">Gender</div>
+            <q-select
+              class="inputBoxTablet"
+              outlined
+              v-model="userData.gender"
+              :options="genderOptions"
+            />
+          </div>
+          <div class="row padBox">
+            <div class="col-4 textB4input">Job title</div>
+            <div class="col">
+              <q-input
+                class="inputBoxTablet"
+                outlined
+                v-model="userData.jobTitle"
+              />
+            </div>
+          </div>
+          <div class="row padBox">
+            <div class="col-4 textB4input">Organization</div>
+            <div class="col">
+              <q-input
+                class="inputBoxTablet"
+                outlined
+                v-model="userData.organization"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+      <div class="row q-py-xl">
+        <div class="col-2"></div>
+        <div
+          class="cursor-pointer font24"
+          style="
+            width: 175px;
+            height: 50px;
+            border-radius: 10px;
+            border: 1px solid #000000;
+            line-height: 50px;
+          "
+          align="center"
+          @click="goBack()"
+        >
+          Cancel
+        </div>
+        <div class="col-1"></div>
+        <div
+          class="cursor-pointer font24 textWhite"
+          style="
+            width: 320px;
+            height: 50px;
+            border-radius: 10px;
+            background: #1976d2;
+            line-height: 50px;
+          "
+          align="center"
+          @click="createAccount()"
+        >
+          Create my new account
+        </div>
+        <div class="col"></div>
+      </div>
+      <div class="endTablet q-mt-lg row items-center">
+        <div class="col-3" align="center">
+          <img
+            src="../../public/image/logoMobile.svg"
+            alt=""
+            style="width: 120px; padding-top: 6px"
+          />
+        </div>
+        <div class="col"></div>
+        <div class="col-1" style="width: 70px">
+          <q-icon class="fab fa-facebook-square socialIconMobile"></q-icon>
+        </div>
+        <div class="col-1" style="width: 70px">
+          <q-icon class="fab fa-twitter-square socialIconMobile"></q-icon>
+        </div>
+        <div class="col-1" style="width: 70px">
+          <q-icon class="fab fa-instagram-square socialIconMobile"></q-icon>
+        </div>
+      </div>
+    </div>
     <!-- PC  -->
     <div
       class="desktop-only shadow-6"
@@ -265,5 +467,12 @@ export default {
 .inputBox {
   height: 40px;
   width: 520px;
+}
+.inputBoxTablet {
+  height: 50px;
+  width: 400px;
+}
+.textB4input {
+  line-height: 50px;
 }
 </style>
