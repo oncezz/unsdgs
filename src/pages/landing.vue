@@ -303,7 +303,7 @@ export default {
 <style lang="scss" scoped>
 .picHeaderMobile {
   background: url("../../public/image/headerMobile.jpg");
-  -webkit-background-size: cover;
+  background-size: cover;
   height: 175px;
   width: 100%;
   position: relative;
@@ -330,7 +330,7 @@ export default {
 
 .picTablet {
   background: url("../../public/image/headerTablet.jpg");
-  -webkit-background-size: cover;
+  background-size: cover;
   height: 526px;
   width: 100%;
   position: relative;
@@ -356,7 +356,7 @@ export default {
 }
 .picPC {
   background: url("../../public/image/headerPC.jpg");
-  -webkit-background-size: cover;
+  background-size: cover;
   height: 700px;
   width: 100%;
   position: relative;
