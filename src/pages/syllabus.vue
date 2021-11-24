@@ -1,7 +1,497 @@
 <template>
   <div>
     <!-- mobile -->
-    <div class="mobile-only lt-sm">mobile</div>
+    <div class="mobile-only lt-sm">
+      <div class="headerMobile row items-center" style="z-index: 999">
+        <div
+          class="col-4 cursor-pointer"
+          align="center"
+          style=""
+          @click="goHome()"
+        >
+          <img
+            class=""
+            src="../../public/image/logoMobile.svg"
+            alt=""
+            style="width: 94px; padding-top: 6px"
+          />
+        </div>
+        <div class="lineMobile"></div>
+        <div class="col q-px-sm font14" style="color: white">
+          Trade and the sustainable development goals (SDGs)
+        </div>
+      </div>
+      <div style="height: 50px"></div>
+      <!-- header  -->
+      <div class="topBarMobile q-pl-md" style="color: white">
+        <div class="font18 fontB">
+          Trade and the sustainable development goals (SDGs)
+        </div>
+        <div class="font14 q-pt-md">
+          Learn about how to make trade works for all and environment
+        </div>
+        <div class="q-pt-md">
+          Created by UNESCAP &nbsp;&nbsp;&nbsp; Last updated 7/2021
+        </div>
+        <div class="q-pt-sm row">
+          <div class="loginBtnMobile">
+            <div class="font18" align="center">Log in</div>
+          </div>
+          <div class="signUpBtnMobile q-ml-md">
+            <div class="font18" style="color: black" align="center">
+              Sign Up
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- endTopbar  -->
+      <!-- Content  -->
+      <div class="q-px-md">
+        <div class="font18 fontB q-pt-md" style="color=black">Goal:</div>
+        <div class="font14 q-pt-xs">
+          Develop a positive, aware, as well as critical attitude toward trade,
+          trade liberalization, and globalization in contributing to sustainable
+          development
+        </div>
+        <div class="font18 fontB q-pt-sm">What you’ll learn</div>
+        <div class="font14">
+          <ul class="ulMobile">
+            <li>
+              Understand the potential role of trade that can contribute to
+              developing countries’ acheivement of the SDGs.
+            </li>
+
+            <li>
+              Identify factors that inhibits effective use of trade as a means
+              of implementation.
+            </li>
+            <li>
+              Aware about cross-cutting issues that challenge the effectiveness
+              of trade as an instrument toward the SDGs
+            </li>
+            <li>
+              Recognize the importance of holistic policy approach as being
+              crucial for ensuring trade is a powerful engine for inclusive
+              growth and sustainable development.
+            </li>
+          </ul>
+        </div>
+        <div class="font18 fontB">Requirement</div>
+        <div class="font14">
+          <ul class="ulMobile">
+            <li>
+              This course is open to anyone interested in trade, globalization,
+              and sustainable development.
+            </li>
+            <li>No prerequisites</li>
+          </ul>
+        </div>
+        <div class="font18 fontB">Descrition</div>
+        <div class="font14">
+          <ul class="ulMobile">
+            <li>
+              This course uses a non-technical approach to provide essential
+              knowledge to understand how trade and globalization can bring
+              opportunity and challenges toward sustainable development.
+            </li>
+            <li>
+              Participants that work, study, or interest in public policy and
+              development will find the course particularly relevant.
+            </li>
+            <li>
+              The total of 13 modules (4 introductory-level modules and 9
+              intermediate-level modules). Approximately, 15-20 minutes per
+              modules. Participants can learn at your own schedule.
+            </li>
+            <li>
+              Participants will earn a shareable certificate after the
+              completion of the following steps: 1) completion of all modules,
+              2) achieve over 70% of the end-course quiz, and 3) submit the
+              e-survey for feedbacks about the course
+            </li>
+          </ul>
+        </div>
+        <div class="font18 fontB">Contributors to the course</div>
+        <div class="font14 q-pt-xs">
+          This course is developed by the Trade Policy and Facilitation Section
+          (TPFS) of Trade, Investment and Innovation Division (TIID), the United
+          Nations Economic and Social Commission for Asia and the Pacific
+          (UNESCAP).
+          <br /><br />
+          Course coordinator: Witada Anukoonwattaka, Economic Affairs Officer,
+          TPFS, ESCAP
+          <br />
+          Course principal: Ian Coxhead, Professor of Agricultural and Applied
+          Economics, University of Madison
+
+          <br /><br />
+          The course is benefit from comments and inputs from the course
+          advisory board and ARTNeT advisors:
+        </div>
+      </div>
+      <!-- endcontent  -->
+      <!-- NameAndPosition          -->
+      <div class="q-pt-sm q-px-md">
+        <div class="font14">Yann Duval</div>
+        <div class="font12Grey">Chief TPFS, TIID, ESCAP</div>
+        <div class="font14 q-pt-sm">Mia Mikic</div>
+        <div class="font12Grey">
+          Advisor at Large, Asia-Pacific Research and Training Network on Trade
+          (ARTNeT)
+        </div>
+        <div class="font14 q-pt-sm">Premachandra Athukorala</div>
+        <div class="font12Grey">
+          Professor of Economics, Australian National University
+        </div>
+        <div class="font14 q-pt-sm">Prabir De</div>
+        <div class="font12Grey">
+          Professor, and Head, ASEAN-India Centre (AIC), Research and
+          Information System for Developing Countries (RIS), New Delhi
+        </div>
+        <div class="font14 q-pt-sm">Evelyn S. Devadason</div>
+        <div class="font12Grey">
+          Professor, Department of Economics, University of Malaysia
+        </div>
+        <div class="font14 q-pt-sm">Matthias C. Helble</div>
+        <div class="font12Grey">
+          Scientist, Evidence to Policy & Impact, Department of Research for
+          Health, World Health Organization
+        </div>
+        <div class="font14 q-pt-sm">Jiansuo Pei</div>
+        <div class="font12Grey">
+          Associate Professor of Economics, Renmin University of China
+        </div>
+        <div class="font14 q-pt-sm">Alberto Posso</div>
+        <div class="font12Grey">
+          Professor of Economics, the International Development & Trade Research
+          Group, Royal Melbourne Institute of Technology (RMIT)
+        </div>
+        <div class="font14 q-pt-sm">Wisarn Pupphavesa</div>
+        <div class="font12Grey">
+          Senior Advisor, Thailand Development Research Institute (TDRI)
+        </div>
+        <div class="font14 q-pt-sm">Chayodom Sabhasri</div>
+        <div class="font12Grey">
+          Associate Professor, Former Dean, Faculty of Economics, Chulalongkorn
+          University
+        </div>
+        <div class="font14 q-pt-sm">Supachai Srisuchart</div>
+        <div class="font12Grey">
+          Assistant Professor, Dean, Faculty of Economics, Thammasat University
+        </div>
+        <div class="font14 q-pt-sm">Sasatra Sudsawasd</div>
+        <div class="font12Grey">
+          Associate Professor, National Institute of Development Administration
+          (NIDA)
+        </div>
+        <div class="font14 q-pt-sm">Andrew Kam Jia Yi</div>
+        <div class="font12Grey">
+          Associate Professor, Senior Fellow, Institute of Malaysian and
+          International Studies, National University of Malaysia
+        </div>
+        <div class="font14 q-pt-sm">Pasakorn Thammachote</div>
+        <div class="font12Grey">
+          Faculty of economics, Kasetsart University, Thailand
+        </div>
+        <!-- endNameAndPosition  -->
+        <!-- Course content  -->
+        <!-- Part A  -->
+        <div class="font18 fontB q-pt-md">Course content</div>
+        <div class="font14 fontB">Part A: Introductory modules</div>
+        <div>
+          <q-list bordered>
+            <q-expansion-item
+              group="somegroup"
+              label="Module A.1: Trade and the Sustainable Development Goals, a general overview"
+              default-opened
+            >
+              <q-card>
+                <q-card-section>
+                  This module will introduce the course by conceptually mapping
+                  the nexus between trade and the sustainable development goals
+                  (SDGs). The module will discuss the mechanisms by which trade
+                  can potentially influence some SDGs and the mechanisms by
+                  which achieving the SDGs can influence trade patterns. The
+                  module will also highlight that while some SDGs may not
+                  directly link to trade or trade policy, unregulated trade may
+                  indirectly deteriorate and impact their achievement. This
+                  module will focus on all the SDGs.
+                </q-card-section>
+              </q-card>
+            </q-expansion-item>
+            <q-separator />
+
+            <q-expansion-item
+              group="somegroup"
+              label="Module A.2: Trade and development: tools and trends
+"
+            >
+              <q-card>
+                <q-card-section>
+                  This module will introduce the relationship between trade and
+                  the economy of a developing country. It will present
+                  conceptual mechanisms by which trade promotes economic growth
+                  and employment and discuss the controversial relationship
+                  between trade and inequality. It will summarise some stylized
+                  facts about developing country trade volumes, growth and
+                  patterns.
+                </q-card-section>
+              </q-card>
+            </q-expansion-item>
+
+            <q-separator />
+
+            <q-expansion-item
+              class="font14"
+              group="somegroup"
+              label="Module A.3: Trade and environmental issues
+
+"
+            >
+              <q-card>
+                <q-card-section>
+                  This module will introduce the relationship between trade and
+                  the environment. It begins with the conceptual framework, and
+                  illustrates this with some examples from trade and
+                  environmental issues in the developing countries.
+                </q-card-section>
+              </q-card>
+            </q-expansion-item>
+
+            <q-separator />
+
+            <q-expansion-item
+              group="somegroup"
+              label="Module A.4: Trade policy reforms and the SDGs
+
+
+"
+            >
+              <q-card>
+                <q-card-section>
+                  This module reviews trade policy reforms and their
+                  interactions with efforts to attain SDGs. It includes a
+                  discussion of the effects of tariffs and tariffs reforms on
+                  incomes and income distribution. It continues to a discussion
+                  on how trade policy has shifted to address issues of
+                  sustainability and inclusive growth. This module spans the
+                  full range of SDGs.
+                </q-card-section>
+              </q-card>
+            </q-expansion-item>
+          </q-list>
+        </div>
+        <!-- end Part A  -->
+        <!-- Part B  -->
+        <!-- Part B.1  -->
+        <div class="font14 fontB q-pt-sm">Part B: Intermediate mpdules</div>
+        <div class="q-pb-sm">
+          Part B.1: Trade, Poverty, Hunger and inclusive growth These modules
+          focus on the following SDGs: 1, 2, 3, 4, 5, 8 and 10.
+        </div>
+        <div>
+          <q-list bordered>
+            <q-expansion-item
+              group="somegroup"
+              label="Module B.1.1:  How does trade affect poverty and inequality?"
+            >
+              <q-card>
+                <q-card-section>
+                  This module will conceptually discuss the conceptual
+                  mechanisms by which trade affects poverty and inequality
+                  before summarising the existing empirical evidence on the two.
+                  It will touch on multinational corporations and outsourcing
+                  and their potential effects on poverty and inequality. It will
+                  discuss the role that complimentary policies may have in
+                  allowing the growth-related effects of trade to be channelled
+                  toward equitable growth. This module will focus on SDGs: 1, 2,
+                  3, 4, 5, 8 and 10.
+                </q-card-section>
+              </q-card>
+            </q-expansion-item>
+
+            <q-separator />
+
+            <q-expansion-item
+              group="somegroup"
+              label="Module B.1.2:  Should we use trade restrictions to achieve zero hunger?"
+            >
+              <q-card>
+                <q-card-section>
+                  Should we use trade restrictions to achieve zero hunger? This
+                  module will discuss issues surrounding food security and the
+                  notion that some nations restrict trade to achieve this. It
+                  will critically assess this notion conceptually before
+                  highlighting that importing food is not (necessarily) a
+                  problem. This module will focus on SDGs: 1 and 2.
+                </q-card-section>
+              </q-card>
+            </q-expansion-item>
+
+            <q-separator />
+
+            <q-expansion-item
+              group="somegroup"
+              label="Module B.1.3:  Does international trade cause (inclusive) growth?"
+            >
+              <q-card>
+                <q-card-section>
+                  This module will begin with an introduction of international
+                  trade patterns across the world. It will use measures of
+                  openness, tariffs and Non-tariff barriers to show correlations
+                  between international trade and economic growth. It will then
+                  provide a review of the existing literature on trade and
+                  economic growth. It will highlight both potentially positive
+                  and negative trade effects on growth and introduce the notion
+                  of inclusive growth. This module will focus on SDGs: 1, 3, 4,
+                  5, 8 and 10.
+                </q-card-section>
+              </q-card>
+            </q-expansion-item>
+          </q-list>
+          <!-- end Part B.1  -->
+          <!-- Part B.2  -->
+          <div class="q-pt-sm q-pb-sm">
+            Part B.2: Trade, climate change and sustainable growth These modules
+            focus on the following SDGs: 6,7, 11,13,14, and 15.
+          </div>
+          <q-list bordered>
+            <q-expansion-item
+              group="somegroup"
+              label="Module B.2.1:  Trade and sustainability 1: climate change and environment"
+            >
+              <q-card>
+                <q-card-section>
+                  This module will conceptually discuss trade and the goal of
+                  environmental sustainability. It will focus on whether trade
+                  makes the task of dealing with CC effects and maintaining a
+                  healthy environment easier or more difficult. The module will
+                  also introduce concepts such as sustainable growth and
+                  sustainable trade. It will investigate the pros and cons of
+                  the nexus between trade and sustainable growth. It will
+                  intuitively discuss how trade can be used as a channel to
+                  achieve inclusive economic growth and poverty reduction. It
+                  will then discuss evidence highlighting the circumstances that
+                  facilitate and impede this process. This module will focus on
+                  SDGs: 6,7,11,13,14, and 15.
+                </q-card-section>
+              </q-card>
+            </q-expansion-item>
+
+            <q-separator />
+
+            <q-expansion-item
+              group="somegroup"
+              label="Module B.2.2:  Trade and sustainability 2: education and intergenerational mobility"
+            >
+              <q-card>
+                <q-card-section>
+                  The second module on sustainability turns attention to the
+                  challenge of sustaining growth in the long run. This module
+                  focuses on human capital accumulation and the transmission of
+                  gains from growth and development to the next generation.
+                  These are two essential elements in efforts to escape the
+                  so-called “middle income trap.” This module will focus on
+                  SDGs: 4, 8 and 11.
+                </q-card-section>
+              </q-card>
+            </q-expansion-item>
+          </q-list>
+        </div>
+        <!-- end Part B.2  -->
+        <!-- Part B.3  -->
+        <div class="q-pt-sm q-pb-sm">
+          Part B.3: Trade, decent work, innovation and responsible consumption
+          and production. These modules focus on the following SDGs: 8, 9, and
+          12.
+        </div>
+        <q-list bordered>
+          <q-expansion-item
+            group="somegroup"
+            label="Module B.3.1:  Does trade lead to a race to the bottom in labour standards?"
+          >
+            <q-card>
+              <q-card-section>
+                This module has four components that will focus on trade and
+                decent work. It begins with an introduction of decent work and
+                labour standards. It then discusses labour market consequences
+                of international trade. We examine how trade improves workers’
+                quality of life through higher wages— and increases incentives
+                for labor exploitation at the same time. We end our discussion
+                by discussing the role of domestic and international
+                institutions in mitigating the undesired effects of trade. This
+                module will focus on SDGs: 8 and 9.
+              </q-card-section>
+            </q-card>
+          </q-expansion-item>
+
+          <q-separator />
+
+          <q-expansion-item
+            group="somegroup"
+            label="Module B.3.2: How does trade influence productivity and innovation?"
+          >
+            <q-card>
+              <q-card-section>
+                This module will conceptually discuss how trade can influence
+                efficiency and innovation. It will discuss the
+                productivity-enhancing effects of trade, and the
+                complementarities between trade (and FDI) and efforts to reach
+                critical SDGs. This module will focus on SDG 9.
+              </q-card-section>
+            </q-card>
+          </q-expansion-item>
+
+          <q-separator />
+
+          <q-expansion-item
+            group="somegroup"
+            label="Module B.3.3: Trade and responsible consumption/production"
+          >
+            <q-card>
+              <q-card-section>
+                This module will discuss gains from trade from a consumer
+                perspective. It discusses consumer roles in creating more
+                sustainable trade patterns and influencing how products are
+                produced and supplied. It will touch on issues surrounding
+                consumer activism and their potential effect. It will introduce
+                issues associated with voluntary and forced trade standards
+                applied to international supply chains. This module will focus
+                on SDG 12.
+              </q-card-section>
+            </q-card>
+          </q-expansion-item>
+        </q-list>
+        <!-- end Part B.3  -->
+        <div class="font18 fontB q-pt-md">References and reading list</div>
+        <div class="font14 q-pt-sm">
+          Click
+          <span class="goToRef" @click="goToReferences()"> here</span>
+          to see the detail
+        </div>
+        <!-- bottom  -->
+      </div>
+      <div class="endMobile q-mt-lg row items-center">
+        <div class="col-4" align="center">
+          <img
+            src="../../public/image/logoMobile.svg"
+            alt=""
+            style="width: 94px; padding-top: 6px"
+          />
+        </div>
+        <div class="col"></div>
+        <div class="col-1" style="width: 50px">
+          <q-icon class="fab fa-facebook-square socialIconMobile"></q-icon>
+        </div>
+        <div class="col-1" style="width: 50px">
+          <q-icon class="fab fa-twitter-square socialIconMobile"></q-icon>
+        </div>
+        <div class="col-1" style="width: 50px">
+          <q-icon class="fab fa-instagram-square socialIconMobile"></q-icon>
+        </div>
+      </div>
+    </div>
+
     <!-- tablet  -->
     <div class="mobile-only gt-xs orientation-portrait">หมุนหน้าจอ</div>
     <div class="mobile-only gt-xs orientation-landscape">
@@ -912,7 +1402,7 @@
         </div>
         <div class="contentText q-pt-sm">
           Click
-          <u><span class="goToRef" @click="goToReferences()"> here</span></u>
+          <span class="goToRef" @click="goToReferences()"> here</span>
           to see the detail
         </div>
         <!-- ------- -->
@@ -1069,6 +1559,7 @@ export default {
   font-size: 18px;
 }
 .goToRef {
+  text-decoration: underline;
   cursor: pointer;
   color: blue;
 }
@@ -1099,5 +1590,34 @@ td {
   line-height: 42px;
   font-size: 16px;
   border: 1px solid black;
+}
+.loginBtnMobile {
+  background: #1976d2;
+  line-height: 40px;
+  font-size: 18px;
+  width: 130px;
+  height: 40px;
+  border-radius: 5px;
+}
+.signUpBtnMobile {
+  background: #ffffff;
+  line-height: 40px;
+  font-size: 18px;
+  width: 130px;
+  height: 40px;
+  border-radius: 5px;
+}
+.topBarMobile {
+  background-color: #33383d;
+  width: 100%;
+  height: 214px;
+}
+.ulMobile {
+  margin-left: -15px;
+  margin-top: 10px;
+}
+.font12Grey {
+  color: #898989;
+  font-size: 12px;
 }
 </style>
