@@ -29,10 +29,6 @@ const routes = [
     path: "/exam",
     component: () => import("pages/exam.vue"),
   },
-  {
-    path: "/test",
-    component: () => import("pages/test.vue"),
-  },
 ];
 
 export default routes;

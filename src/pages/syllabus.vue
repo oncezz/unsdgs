@@ -744,48 +744,6 @@
               <td>Faculty of economics, Kasetsart University, Thailand</td>
             </tr>
           </table>
-          <!-- <div class="row q-pt-md">
-            <div class="col-3 q-pl-lg" style="line-height: 40px">
-              Yann Duval <br />
-              Mia Mikic<br />
-              Premachandra Athukorala <br />
-              Prabir De<br />
-              Evelyn S. Devadason<br />
-              Matthias C. Helble <br />
-              Biswajit Nag<br />
-              Jiansuo Pei<br />
-              Alberto Posso<br />
-              Wisarn Pupphavesa<br />
-              Chayodom Sabhasri <br />
-              Supachai Srisuchart<br />
-              Sasatra Sudsawasd<br />
-              Andrew Kam Jia Yi<br />
-              Pasakorn Thammachote<br />
-            </div>
-            <div class="col" style="line-height: 40px">
-              Chief TPFS, TIID, ESCAP
-              <br />Advisor at Large, Asia-Pacific Research and Training Network
-              on Trade (ARTNeT) <br />Professor of Economics, Australian
-              National University <br />Professor, and Head, ASEAN-India Centre
-              (AIC), Research and Information System for Developing Countries
-              (RIS), New Delhi <br />Professor, Department of Economics,
-              University of Malaysia <br />Scientist, Evidence to Policy &
-              Impact, Department of Research for Health, World Health
-              Organization <br />Professor & Head, Economics Division, Indian
-              Institute of Foreign Trade (IIFT) <br />Associate Professor of
-              Economics, Renmin University of China <br />Professor of
-              Economics, the International Development & Trade Research Group,
-              Royal Melbourne Institute of Technology (RMIT) <br />Senior
-              Advisor, Thailand Development Research Institute (TDRI)
-              <br />Associate Professor, Former Dean, Faculty of Economics,
-              Chulalongkorn University <br />Assistant Professor, Dean, Faculty
-              of Economics, Thammasat University <br />Associate Professor,
-              National Institute of Development Administration (NIDA)
-              <br />Associate Professor, Senior Fellow, Institute of Malaysian
-              and International Studies, National University of Malaysia
-              <br />Faculty of economics, Kasetsart University, Thailand
-            </div>
-          </div> -->
         </div>
         <!-- coursee content  -->
         <div class="row q-pt-md">

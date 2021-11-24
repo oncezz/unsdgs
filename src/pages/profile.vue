@@ -232,6 +232,14 @@
         <div class="col q-px-md font18" style="color: white">
           Trade and the sustainable development goals (SDGs)
         </div>
+        <div class="col-1" align="center" @click="signOut()">
+          <img
+            style="margin-top: 8px"
+            src="../../public/image/signOut.svg"
+            alt=""
+          />
+          <div class="font14 textWhite" style="margin-top: -8px">sign out</div>
+        </div>
       </div>
       <div class="q-pa-md" style="height: 60px"></div>
       <!-- end header  -->
@@ -496,6 +504,31 @@
           <div class="col"></div>
         </div>
       </div>
+      <!-- Certificate  -->
+      <div class="fixPC" v-show="selectPage == 'Certificate'" align="center">
+        <div class="font48 q-pt-lg" align="center" v-show="userData.exam == 0">
+          <div class="q-py-lg"></div>
+          Sorry! You must pass
+          <span class="toExam" @click="goToExam()">the exam.</span>
+
+          <div
+            class=""
+            style="position: absolute; bottom: 0px; left: calc(50vw - 100px)"
+          >
+            <img src="../../public/image/mustPassExam.svg" alt="" style="" />
+          </div>
+        </div>
+        <div class="" align="center" v-show="userData.exam == 1">
+          <div class="">
+            <img
+              src="../../public/image/certi.jpg"
+              alt=""
+              width="870px"
+              style=""
+            />
+          </div>
+        </div>
+      </div>
       <!-- ------ end tablet ------ -->
     </div>
 
@@ -524,6 +557,14 @@
             Trade and the sustainable development goals (SDGs)
           </div>
           <div class="font16">{{ selectPage }}</div>
+        </div>
+        <div
+          class="col-1 q-ma-md cursor-pointer"
+          align="center"
+          @click="signOut()"
+        >
+          <img src="../../public/image/signOut.svg" alt="" />
+          <div class="font14 textWhite">sign out</div>
         </div>
       </div>
       <div class="q-pa-md" style="height: 86px"></div>
@@ -876,6 +917,9 @@ export default {
         type: "positive",
         message: `Change password complete.`,
       });
+    },
+    signOut() {
+      this.$router.push("/syllabus");
     },
   },
   mounted() {
