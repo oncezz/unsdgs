@@ -70,7 +70,7 @@
         >
           Certificate
         </div>
-        <div class="col-4 q-pr-md q-pt-sm" align="right">
+        <div class="col-3 q-pr-md q-pt-sm" align="right">
           <img src="../../public/image/signOut.svg" alt="" />
         </div>
       </div>
@@ -218,7 +218,287 @@
     </div>
     <!-- tablet  -->
     <div class="mobile-only gt-xs orientation-portrait">หมุนหน้าจอ</div>
-    <div class="mobile-only gt-xs orientation-landscape">Tablet</div>
+    <div class="mobile-only gt-xs orientation-landscape">
+      <div class="headerTablet row items-center" style="z-index: 999">
+        <div class="col-3" align="center" style="" @click="goHome()">
+          <img
+            class="picHeadTablet"
+            src="../../public/image/logoMobile.svg"
+            alt=""
+            style=""
+          />
+        </div>
+        <div class="lineTablet"></div>
+        <div class="col q-px-md font18" style="color: white">
+          Trade and the sustainable development goals (SDGs)
+        </div>
+      </div>
+      <div class="q-pa-md" style="height: 60px"></div>
+      <!-- end header  -->
+      <div class="row font18" align="center">
+        <div
+          class="q-pa-md"
+          style="width: 160px"
+          v-show="selectPage != 'Info'"
+          @click="pageInfo()"
+        >
+          Info
+        </div>
+        <div class="selectPage q-pa-md" v-show="selectPage == 'Info'">Info</div>
+        <div
+          class="q-pa-md"
+          style="width: 160px"
+          v-show="selectPage != 'Password'"
+          @click="pagePassword()"
+        >
+          Password
+        </div>
+        <div class="selectPage q-pa-md" v-show="selectPage == 'Password'">
+          Password
+        </div>
+        <div
+          class="q-pa-md"
+          style="width: 160px"
+          v-show="selectPage != 'Certificate'"
+          @click="pageCertificate()"
+        >
+          Certificate
+        </div>
+        <div class="selectPage q-pa-md" v-show="selectPage == 'Certificate'">
+          Certificate
+        </div>
+      </div>
+      <hr style="margin-top: -1px" />
+      <!-- end pick page  -->
+      <!-- info  -->
+      <div class="" v-show="selectPage == 'Info'" style="">
+        <div class="row font18">
+          <div class="col-2"></div>
+          <div class="col">
+            <div class="row padBoxTablet">
+              <div class="col-5">Username</div>
+              <div class="col q-pl-md">
+                {{ userData.username }}
+              </div>
+            </div>
+            <div class="row padBoxTablet">
+              <div class="col-5">Email address</div>
+              <div class="col q-pl-md">
+                {{ userData.email }}
+              </div>
+            </div>
+            <div class="row padBoxTablet">
+              <div class="col-5">First name</div>
+              <div class="col">
+                <q-input
+                  dense
+                  class="inputBoxTablet"
+                  outlined
+                  v-model="userData.firstName"
+                />
+              </div>
+            </div>
+            <div class="row padBoxTablet">
+              <div class="col-5">Surname</div>
+              <div class="col">
+                <q-input
+                  dense
+                  class="inputBoxTablet"
+                  outlined
+                  v-model="userData.surName"
+                />
+              </div>
+            </div>
+            <div class="row padBoxTablet">
+              <div class="col-5">City/Town</div>
+              <div class="col">
+                <q-input
+                  dense
+                  class="inputBoxTablet"
+                  outlined
+                  v-model="userData.city"
+                />
+              </div>
+            </div>
+            <div class="row padBoxTablet">
+              <div class="col-5">Country</div>
+              <q-select
+                dense
+                class="inputBoxTablet"
+                outlined
+                v-model="userData.country"
+                :options="countryOptions"
+              />
+            </div>
+            <div class="row padBoxTablet">
+              <div class="col-5">Gender</div>
+              <q-select
+                dense
+                class="inputBoxTablet"
+                outlined
+                v-model="userData.gender"
+                :options="genderOptions"
+              />
+            </div>
+            <div class="row padBoxTablet">
+              <div class="col-5">Job title</div>
+              <div class="col">
+                <q-input
+                  dense
+                  class="inputBoxTablet"
+                  outlined
+                  v-model="userData.jobTitle"
+                />
+              </div>
+            </div>
+            <div class="row padBoxTablet">
+              <div class="col-5">Organization</div>
+              <div class="col">
+                <q-input
+                  dense
+                  class="inputBoxTablet"
+                  outlined
+                  v-model="userData.organization"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-2"></div>
+        </div>
+        <div class="row q-pt-xl">
+          <div class="col-4"></div>
+          <div
+            class="font24"
+            style="
+              width: 175px;
+              height: 50px;
+              border-radius: 10px;
+              border: 1px solid #000000;
+              line-height: 50px;
+            "
+            align="center"
+            @click=""
+          >
+            Cancel
+          </div>
+          <div class="col-1"></div>
+          <div
+            class="font24 textWhite"
+            style="
+              width: 175px;
+              height: 50px;
+              border-radius: 10px;
+              background: #1976d2;
+              line-height: 50px;
+            "
+            align="center"
+            @click="saveInfo()"
+          >
+            Save
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+      <!-- password  -->
+      <div class="fixPagePC" v-show="selectPage == 'Password'">
+        <div class="row font18">
+          <div class="col-2"></div>
+          <div class="col">
+            <div class="row padBoxTablet">
+              <div class="col-5">Username</div>
+              <div class="col q-pl-md">
+                {{ userData.username }}
+              </div>
+            </div>
+            <div class="row padBoxTablet">
+              <div class="col-5">Email address</div>
+              <div class="col q-pl-md">
+                {{ userData.email }}
+              </div>
+            </div>
+            <div class="row q-pt-md">
+              <div class="col-5 padBoxTablet">Old password</div>
+              <div class="col q-pt-md">
+                <q-input
+                  dense
+                  class="inputBoxTablet"
+                  outlined
+                  v-model="changePassword.oldPassword"
+                />
+                <div class="font14 q-pt-sm">
+                  The password must have at least 6 characters.
+                </div>
+              </div>
+            </div>
+            <div class="row q-pt-md">
+              <div class="col-5 padBoxTablet">New password</div>
+              <div class="col q-pt-md">
+                <q-input
+                  dense
+                  class="inputBoxTablet"
+                  outlined
+                  v-model="changePassword.newPassword"
+                />
+                <div class="font14 q-pt-sm">
+                  The password must have at least 6 characters.
+                </div>
+              </div>
+            </div>
+
+            <div class="row q-pt-md">
+              <div class="col-5 padBoxTablet">Confirm new password</div>
+              <div class="col q-pt-md">
+                <q-input
+                  dense
+                  class="inputBoxTablet"
+                  outlined
+                  v-model="changePassword.confirmPassword"
+                />
+                <div class="font14 q-pt-sm">
+                  The password must have at least 6 characters.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3"></div>
+        </div>
+        <div class="row q-py-xl q-mt-lg">
+          <div class="col-4"></div>
+          <div
+            class="font24"
+            style="
+              width: 175px;
+              height: 50px;
+              border-radius: 10px;
+              border: 1px solid #000000;
+              line-height: 50px;
+            "
+            align="center"
+            @click=""
+          >
+            Cancel
+          </div>
+          <div class="col-1"></div>
+          <div
+            class="font24 textWhite"
+            style="
+              width: 175px;
+              height: 50px;
+              border-radius: 10px;
+              background: #1976d2;
+              line-height: 50px;
+            "
+            align="center"
+            @click="saveNewPassword()"
+          >
+            Save
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+      <!-- ------ end tablet ------ -->
+    </div>
+
     <!-- PC  -->
     <div
       class="desktop-only shadow-6"
@@ -284,7 +564,7 @@
       <hr style="margin-top: -1px" />
       <!-- end pick page  -->
       <!-- info  -->
-      <div class="fixPage" v-show="selectPage == 'Info'" style="">
+      <div class="fixPagePC" v-show="selectPage == 'Info'" style="">
         <div class="row font18">
           <div class="col-3"></div>
           <div class="col">
@@ -413,7 +693,7 @@
         </div>
       </div>
       <!-- password  -->
-      <div class="fixPage" v-show="selectPage == 'Password'">
+      <div class="fixPagePC" v-show="selectPage == 'Password'">
         <div class="row font18">
           <div class="col-3"></div>
           <div class="col">
@@ -501,7 +781,11 @@
         </div>
       </div>
       <!-- Certificate  -->
-      <div class="fixPage" v-show="selectPage == 'Certificate'" align="center">
+      <div
+        class="fixPagePC"
+        v-show="selectPage == 'Certificate'"
+        align="center"
+      >
         <div class="font48 q-pt-xl" align="center" v-show="userData.exam == 0">
           <div class="q-py-lg"></div>
           Sorry! You must pass
@@ -614,7 +898,7 @@ export default {
   height: 40px;
   width: 360px;
 }
-.fixPage {
+.fixPagePC {
   min-height: calc(100vh - 160px);
 }
 .toExam {
@@ -658,5 +942,13 @@ export default {
 }
 .padInputMobile {
   padding-left: 62px;
+}
+.padBoxTablet {
+  padding-top: 20px;
+  line-height: 35px;
+}
+.inputBoxTablet {
+  height: 35px;
+  width: 360px;
 }
 </style>
