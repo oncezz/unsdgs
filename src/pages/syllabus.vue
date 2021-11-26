@@ -38,7 +38,12 @@
             <div class="font18" align="center">Log in</div>
           </div>
           <div class="signUpBtnMobile q-ml-md">
-            <div class="font18" style="color: black" align="center">
+            <div
+              class="font18"
+              style="color: black"
+              align="center "
+              @click="goTosignup()"
+            >
               Sign Up
             </div>
           </div>

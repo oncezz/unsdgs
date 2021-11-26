@@ -2,8 +2,15 @@
   <div>
     <!-- mobile -->
     <div class="mobile-only lt-sm">
+      <!-- header  -->
+
       <div class="headerMobile row items-center" style="z-index: 999">
-        <div class="col-4" align="center" style="">
+        <div
+          class="col-4 cursor-pointer"
+          align="center"
+          style=""
+          @click="goHome()"
+        >
           <img
             class=""
             src="../../public/image/logoMobile.svg"
@@ -14,6 +21,123 @@
         <div class="lineMobile"></div>
         <div class="col q-px-sm font14" style="color: white">
           Trade and the sustainable development goals (SDGs)
+        </div>
+      </div>
+      <div style="height: 50px"></div>
+      <!-- end header  -->
+      <div class="topBar row textWhite">
+        <div class="col q-pt-sm q-pl-md">
+          <div class="font18">
+            Trade and the sustainable development goals (SDGs)
+          </div>
+          <div class="font14 textWhite">
+            Learn about how to make trade works for all and environment<br />
+          </div>
+          <div class="font24 q-pt-md">Sign up</div>
+          <div class="font18 fontU q-pt-sm" @click="goBack()">
+            back to course content page
+          </div>
+        </div>
+      </div>
+      <!-- content  -->
+      <div>
+        <div class="q-pt-md" style="padding-left: 46px; padding-right: 61px">
+          <div class="q-gutter-md" style="">
+            <q-input class="" v-model="userData.username" label="Username" />
+          </div>
+        </div>
+        <div class="q-pt-md" style="padding-left: 46px; padding-right: 61px">
+          <div class="q-gutter-y-md column">
+            <q-input
+              v-model="userData.password"
+              label="Password"
+              hint="The password must have at least 6 characters."
+            >
+            </q-input>
+          </div>
+        </div>
+        <div class="q-pt-md" style="padding-left: 46px; padding-right: 61px">
+          <div class="q-gutter-md" style="">
+            <q-input class="" v-model="userData.email" label="Email address" />
+          </div>
+          <div class="q-gutter-md" style="">
+            <q-input
+              class=""
+              v-model="confirmEmail"
+              label="Confirm email address"
+            />
+          </div>
+          <div class="q-gutter-md" style="">
+            <q-input class="" v-model="userData.firstName" label="First name" />
+          </div>
+          <div class="q-gutter-md" style="">
+            <q-input class="" v-model="userData.surName" label="Surname" />
+          </div>
+          <div class="q-gutter-md" style="">
+            <q-input class="" v-model="userData.city" label="City/Town" />
+          </div>
+          <div class=""></div>
+        </div>
+        <div>
+          <q-select
+            class="q-pt-md"
+            style="padding-left: 46px; padding-right: 61px"
+            label="Country"
+            v-model="userData.country"
+            :options="countryOptions"
+          />
+        </div>
+        <div>
+          <q-select
+            class="q-pt-md"
+            style="padding-left: 46px; padding-right: 61px"
+            label="Gender"
+            v-model="userData.gender"
+            :options="genderOptions"
+          />
+        </div>
+        <div class="q-pt-md" style="padding-left: 46px; padding-right: 61px">
+          <div class="q-gutter-md" style="">
+            <q-input class="" v-model="userData.jobTitle" label="Job title" />
+          </div>
+          <div>
+            <div class="q-gutter-md" style="">
+              <q-input
+                class=""
+                v-model="userData.organization"
+                label="Organization"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end content  -->
+      <!-- button  -->
+      <div>
+        <div class="row q-pa-md justify-evenly q-mt-md">
+          <div class="cancelBtmMobile" align="center">Cancel</div>
+          <div class="signupBtnMobile" align="center">Sign up</div>
+        </div>
+      </div>
+
+      <!-- bottom -->
+      <div class="endMobile q-mt-lg row items-center">
+        <div class="col-4" align="center">
+          <img
+            src="../../public/image/logoMobile.svg"
+            alt=""
+            style="width: 94px; padding-top: 6px"
+          />
+        </div>
+        <div class="col"></div>
+        <div class="col-1" style="width: 50px">
+          <q-icon class="fab fa-facebook-square socialIconMobile"></q-icon>
+        </div>
+        <div class="col-1" style="width: 50px">
+          <q-icon class="fab fa-twitter-square socialIconMobile"></q-icon>
+        </div>
+        <div class="col-1" style="width: 50px">
+          <q-icon class="fab fa-instagram-square socialIconMobile"></q-icon>
         </div>
       </div>
     </div>
@@ -167,6 +291,7 @@
             </div>
           </div>
         </div>
+
         <div class="col-1"></div>
       </div>
       <div class="row q-py-xl">
@@ -474,5 +599,29 @@ export default {
 }
 .textB4input {
   line-height: 50px;
+}
+.inputBoxMobile {
+  width: 257px;
+  height: 0px;
+}
+.textMinput {
+  line-height: 16px;
+}
+.cancelBtmMobile {
+  width: 130px;
+  height: 40px;
+  font-size: 18px;
+  line-height: 40px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+.signupBtnMobile {
+  width: 130px;
+  height: 40px;
+  font-size: 18px;
+  line-height: 40px;
+  background: #1976d2;
+  color: white;
+  border-radius: 5px;
 }
 </style>
