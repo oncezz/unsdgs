@@ -26,8 +26,8 @@ const routes = [
     component: () => import("pages/profile.vue"),
   },
   {
-    path: "/exam",
-    component: () => import("pages/exam.vue"),
+    path: "/study",
+    component: () => import("pages/study.vue"),
   },
 ];
 

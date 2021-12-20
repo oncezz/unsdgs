@@ -243,15 +243,11 @@
                 </q-card-section>
               </q-card>
             </q-expansion-item>
-
             <q-separator />
-
             <q-expansion-item
               class="font14"
               group="somegroup"
-              label="Module A.3: Trade and environmental issues
-
-"
+              label="Module A.3: Trade and environmental issues"
             >
               <q-card>
                 <q-card-section>
@@ -267,10 +263,7 @@
 
             <q-expansion-item
               group="somegroup"
-              label="Module A.4: Trade policy reforms and the SDGs
-
-
-"
+              label="Module A.4: Trade policy reforms and the SDGs"
             >
               <q-card>
                 <q-card-section>
@@ -1456,7 +1449,7 @@
           <div class="col-9">
             <div class="font18">Username</div>
             <div class="">
-              <q-input class="" dense outlined v-model="username" />
+              <q-input class="" dense outlined v-model="userData.username" />
             </div>
             <div class="font18 q-pt-lg">Password</div>
             <div class="">
@@ -1464,7 +1457,7 @@
                 class=""
                 dense
                 outlined
-                v-model="password"
+                v-model="userData.password"
                 :type="isPwd ? 'password' : 'text'"
                 ><template v-slot:append>
                   <q-icon
@@ -1486,7 +1479,7 @@
             class="diaBtn textWhite"
             align="center"
             style="background-color: #1976d2; border: none"
-            @click="goToProfile()"
+            @click="goToClass()"
           >
             Log in
           </div>
@@ -1507,7 +1500,18 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
+  data() {
+    return {
+      isPwd: true,
+      loginDia: false,
+      userData: {
+        username: "",
+        password: "",
+      },
+    };
+  },
   methods: {
     goToReferences() {
       this.$router.push("/references");
@@ -1518,8 +1522,18 @@ export default {
     goHome() {
       this.$router.push("/");
     },
-    goToProfile() {
-      this.$router.push("/profile");
+    async goToClass() {
+      let url = this.serverpath + "loginuser.php";
+      let res = await axios.post(url, JSON.stringify(this.userData));
+      console.log(res.data);
+
+      if (res.data == "login fail") {
+        this.redNotify("Username / password Incorrect");
+        return;
+      } else {
+        this.$q.localStorage.getItem(res.data);
+        this.$router.push("/study");
+      }
     },
     loginBtn() {
       this.loginDia = true;
@@ -1527,14 +1541,6 @@ export default {
     closeDia() {
       this.loginDia = false;
     },
-  },
-  data() {
-    return {
-      isPwd: true,
-      loginDia: false,
-      username: "",
-      password: "",
-    };
   },
 };
 </script>

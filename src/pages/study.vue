@@ -253,6 +253,7 @@
       class="desktop-only shadow-6"
       style="max-width: 1600px; width: 100%; margin: auto"
     >
+      <!-- *********Header********* -->
       <div class="headerPC row">
         <div class="row q-pt-md textWhite" style="width: 400px">
           <img
@@ -274,7 +275,7 @@
           class="col-2 cursor-pointer q-ma-md"
           align="center"
           style=""
-          @click="goHome()"
+          @click="goToHome()"
         >
           <img
             class="picHeadPC"
@@ -304,7 +305,7 @@
       <div class="row">
         <div class="leftMenuPC">
           <div class="lineMenu"></div>
-          <div class="row">
+          <div class="row font16">
             <div
               class="selectMenuPC text-center cursor-pointer"
               @click="menuPick1()"
@@ -331,148 +332,24 @@
           <div class="lineMenu"></div>
           <div class="contentPC q-pa-sm" style="">
             <!-- menu  -->
-            <div v-show="menu == 1">
-              <q-list>
+            <div v-show="menu == 1" class="font14">
+              <q-list v-for="(item, index) in lessonData" :key="index">
                 <q-expansion-item
-                  class="font18"
+                  dark
+                  expand-separator
+                  header-class="font14"
                   group="somegroup"
-                  :label="nameLeeson[1]"
-                  @show="lessonPick(1)"
-                  default-opened
+                  :label="item.module"
                 >
-                  <q-card>
-                    <q-card-section class="cardStyle">
-                      <ul>
-                        <li>
-                          Introduction to Sustain Development Goals (SDGs)
-                        </li>
-                        <li>SDGs and Trade</li>
-                        <li>Trade and sustainable development</li>
-                        <li>Summing up</li>
-                      </ul>
-                    </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[2]"
-                  @show="lessonPick(2)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[3]"
-                  @show="lessonPick(3)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[4]"
-                  @show="lessonPick(4)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[5]"
-                  @show="lessonPick(5)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[6]"
-                  @show="lessonPick(6)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[7]"
-                  @show="lessonPick(7)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[8]"
-                  @show="lessonPick(8)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[9]"
-                  @show="lessonPick(9)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[10]"
-                  @show="lessonPick(10)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[11]"
-                  @show="lessonPick(11)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[12]"
-                  @show="lessonPick(12)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
+                  <ul>
+                    <li
+                      v-for="(item2, index2) in item.section"
+                      :key="index2"
+                      class="q-py-sm cursor-pointer"
+                    >
+                      {{ item2.lesson }}
+                    </li>
+                  </ul>
                 </q-expansion-item>
               </q-list>
             </div>
@@ -496,30 +373,11 @@
 </template>
 
 <script>
+import lessonJson from "../../public/lesson.json";
 export default {
-  methods: {
-    goHome() {
-      this.$router.push("/");
-    },
-    goToProfile() {
-      this.$router.push("/profile");
-    },
-    signOut() {
-      this.$router.push("/syllabus");
-    },
-    menuPick1() {
-      this.menu = 1;
-      this.selectContent = "exam";
-    },
-    menuPick2() {
-      this.menu = 2;
-    },
-    lessonPick(lesson) {
-      this.selectContent = this.nameLeeson[lesson];
-    },
-  },
   data() {
     return {
+      lessonData: [],
       selectContent: "Module A-1: An overview",
       userName: "AUNNY",
       menu: 1, // 1=menu , 2=narrative
@@ -542,6 +400,30 @@ export default {
         "test sub 3",
       ],
     };
+  },
+  methods: {
+    goToHome() {
+      this.$router.push("/");
+    },
+    goToProfile() {
+      this.$router.push("/profile");
+    },
+    signOut() {
+      this.$router.push("/syllabus");
+    },
+    menuPick1() {
+      this.menu = 1;
+      this.selectContent = "exam";
+    },
+    menuPick2() {
+      this.menu = 2;
+    },
+    lessonPick(lesson) {
+      this.selectContent = this.nameLeeson[lesson];
+    },
+  },
+  mounted() {
+    this.lessonData = lessonJson;
   },
 };
 </script>
@@ -590,9 +472,5 @@ export default {
 }
 .cardStyle {
   background-color: #1f2b35;
-}
-li {
-  padding-top: 6px;
-  cursor: pointer;
 }
 </style>

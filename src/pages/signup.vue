@@ -437,21 +437,25 @@
           </div>
           <div class="row padBox">
             <div class="col-4">Country</div>
-            <q-select
-              class="inputBox"
-              outlined
-              v-model="userData.country"
-              :options="countryOptions"
-            />
+            <div class="col">
+              <q-select
+                class="inputBox"
+                outlined
+                v-model="userData.country"
+                :options="countryOptions"
+              />
+            </div>
           </div>
           <div class="row padBox">
             <div class="col-4">Gender</div>
-            <q-select
-              class="inputBox"
-              outlined
-              v-model="userData.gender"
-              :options="genderOptions"
-            />
+            <div class="col">
+              <q-select
+                class="inputBox"
+                outlined
+                v-model="userData.gender"
+                :options="genderOptions"
+              />
+            </div>
           </div>
           <div class="row padBox">
             <div class="col-4">Job title</div>
@@ -527,6 +531,7 @@
 
 <script>
 import countryJson from "../../public/country_list.json";
+import axios from "axios";
 export default {
   data() {
     return {
@@ -537,14 +542,14 @@ export default {
         firstName: "",
         surName: "",
         city: "",
-        country: "",
-        gender: "Undefined",
+        country: "Afghanistan",
+        gender: "Unspecified",
         jobTitle: "",
         organization: "",
       },
       confirmEmail: "",
       countryOptions: [],
-      genderOptions: ["Female", "Male", "Undefined"],
+      genderOptions: ["Female", "Male", "Unspecified"],
     };
   },
 
@@ -559,19 +564,48 @@ export default {
       let tempOptions = [];
 
       countryJson.forEach((element) => {
-        let data = {
-          label: element.name,
-          code: element.code,
-        };
+        // let data = {
+        //   label: element.name,
+        //   code: element.code,
+        // };
+        let data = element.name;
         tempOptions.push(data);
       });
       this.countryOptions = tempOptions;
     },
-    createAccount() {
-      this.$q.notify({
-        type: "positive",
-        message: `Create new account complete.`,
-      });
+    // ปุ่มสร้าง account ใหม่
+    async createAccount() {
+      //Check email กับ confirm email ว่าถูกต้อง
+      if (this.userData.email != this.confirmEmail) {
+        this.redNotify("Email and confirm email do not match.");
+        return;
+      }
+      //Check ว่ามีการใส่ input ทุกช่อง
+      if (
+        this.userData.username.trim().length == 0 ||
+        this.userData.password.trim().length == 0 ||
+        this.userData.email.trim().length == 0 ||
+        this.userData.firstName.trim().length == 0 ||
+        this.userData.surName.trim().length == 0 ||
+        this.userData.city.trim().length == 0 ||
+        this.userData.organization.trim().length == 0
+      ) {
+        this.redNotify("Need all field to input");
+        return;
+      }
+      //ทำการ ลงทะเบียน
+      let url = this.serverpath + "registeruser.php";
+      let res = await axios.post(url, JSON.stringify(this.userData));
+      if (res.data == "username exists") {
+        this.redNotify("Username exists");
+        return;
+      } else if (res.data == "email exists") {
+        this.redNotify("Email exist");
+        return;
+      } else {
+        this.greenNotify("Save complete");
+        this.$router.push("/syllabus");
+      }
     },
   },
   mounted() {

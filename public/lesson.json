@@ -1,0 +1,58 @@
+[{
+	"module": "Module A1: An overview",
+	"section": [{
+		"id":"m1-1",
+		"lesson": "Introduction to Sustain Development Goals (SDGs)",
+		"vdo": "m1-1.mp4",
+		"narrative": "m1-1.txt"
+	}, {
+		"id":"m1-2",
+		"lesson": "SDGs and Trade",
+		"vdo": "m1-2.mp4",
+		"narrative": "m1-2.txt"
+	}, {
+		"id":"m1-3",
+		"lesson": "Trade and sustainable development",
+		"vdo": "m1-3.mp4",
+		"narrative": "m1-3.txt"
+	}, {
+		"id":"m1-4",
+		"lesson": "Summing up",
+		"vdo": "m1-4.mp4",
+		"narrative": "m1-4.txt"
+	}]
+},
+{
+	"module": "Module A.2: Trade and development: tools and trends",
+	"section": [{
+		"id":"m2-1",
+		"lesson": "Introduction",
+		"vdo": "m2-1.mp4",
+		"narrative": "m2-1.txt"
+	}, {
+		"id":"m2-2",
+		"lesson": "Key concepts and principles",
+		"vdo": "m2-2.mp4",
+		"narrative": "m2-2.txt"
+	}, {
+		"id":"m2-3",
+		"lesson": "How trade works",
+		"vdo": "m2-3.mp4",
+		"narrative": "m2-3.txt"
+	}, {
+		"id":"m2-4",
+		"lesson": "Problems with trade",
+		"vdo": "m2-4.mp4",
+		"narrative": "m2-4.txt"
+	}, {
+		"id":"m2-5",
+		"lesson": "Some trade patterns and trends",
+		"vdo": "m2-5.mp4",
+		"narrative": "m2-5.txt"
+	}, {
+		"id":"m2-6",
+		"lesson": "Looking ahead",
+		"vdo": "m2-6.mp4",
+		"narrative": "m2-6.txt"
+	}]
+}]
