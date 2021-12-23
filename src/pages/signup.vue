@@ -48,15 +48,31 @@
         </div>
         <div class="q-pt-md" style="padding-left: 46px; padding-right: 61px">
           <div class="q-gutter-y-md column">
-            <q-input
-              v-model="userData.password"
-              label="Password"
-              hint="The password must have at least 6 characters."
-            >
-            </q-input>
+            <q-input v-model="userData.password" label="Password"> </q-input>
+          </div>
+          <div
+            v-show="userData.password != '' && !isUserPassword()"
+            class="font12"
+            style="color: #e75427"
+          >
+            The password must have 6-12 characters.
+          </div>
+          <div
+            v-show="userData.password == ''"
+            class="font12"
+            style="color: #868686"
+          >
+            The password must have 6-12 characters.
+          </div>
+          <div
+            v-show="userData.password != '' && isUserPassword()"
+            class="font12"
+            style="color: #e75427"
+          >
+            &nbsp;
           </div>
         </div>
-        <div class="q-pt-md" style="padding-left: 46px; padding-right: 61px">
+        <div class="q-pt-sm" style="padding-left: 46px; padding-right: 61px">
           <div class="q-gutter-md" style="">
             <q-input class="" v-model="userData.email" label="Email address" />
           </div>
@@ -126,17 +142,17 @@
           <img
             src="../../public/image/logoMobile.svg"
             alt=""
-            style="width: 94px; padding-top: 6px"
+            style="width: 107px; padding-top: 6px"
           />
         </div>
         <div class="col"></div>
-        <div class="col-1" style="width: 50px">
+        <div class="col-1" style="width: 35px">
           <q-icon class="fab fa-facebook-square socialIconMobile"></q-icon>
         </div>
-        <div class="col-1" style="width: 50px">
+        <div class="col-1" style="width: 35px">
           <q-icon class="fab fa-twitter-square socialIconMobile"></q-icon>
         </div>
-        <div class="col-1" style="width: 50px">
+        <div class="col-1" style="width: 35px">
           <q-icon class="fab fa-instagram-square socialIconMobile"></q-icon>
         </div>
       </div>
@@ -200,13 +216,38 @@
                 class="inputBoxTablet"
                 outlined
                 v-model="userData.password"
-              />
-              <div class="font14 q-pt-sm">
-                The password must have at least 6 characters.
+                :type="isPwd ? 'password' : 'text'"
+                ><template v-slot:append>
+                  <q-icon
+                    :name="isPwd ? 'visibility_off' : 'visibility'"
+                    class="cursor-pointer"
+                    @click="isPwd = !isPwd"
+                  /> </template
+              ></q-input>
+              <div
+                v-show="userData.password != '' && !isUserPassword()"
+                class="font14"
+                style="color: #e75427"
+              >
+                The password must have 6-12 characters.
+              </div>
+              <div
+                v-show="userData.password == ''"
+                class="font14"
+                style="color: #868686"
+              >
+                The password must have 6-12 characters.
+              </div>
+              <div
+                v-show="userData.password != '' && isUserPassword()"
+                class="font14"
+                style="color: #e75427"
+              >
+                &nbsp;
               </div>
             </div>
           </div>
-          <div class="row padBox">
+          <div class="row q-pt-sm">
             <div class="col-4 textB4input">Email address</div>
             <div class="col">
               <q-input
@@ -292,10 +333,24 @@
           </div>
         </div>
 
-        <div class="col-1"></div>
-      </div>
-      <div class="row q-py-xl">
         <div class="col-2"></div>
+      </div>
+      <div align="center">
+        <div class="font18 q-py-xl row justify-center">
+          <div class="cancelBtmPc font24" @click="goBack()">Cancel</div>
+          <div class="q-pa-md"></div>
+          <div
+            class="createAccountBtnPc text-white font24"
+            @click="createAccount()"
+          >
+            Create my new account
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="row q-py-xl">
+        <div class="col-2 brx"></div>
+
         <div
           class="cursor-pointer font24"
           style="
@@ -310,7 +365,7 @@
         >
           Cancel
         </div>
-        <div class="col-1"></div>
+
         <div
           class="cursor-pointer font24 textWhite"
           style="
@@ -325,14 +380,15 @@
         >
           Create my new account
         </div>
-        <div class="col"></div>
-      </div>
+
+        <div class="col-2 brx"></div>
+      </div> -->
       <div class="endTablet q-mt-lg row items-center">
-        <div class="col-3" align="center">
+        <div class="col-3 q-pl-lg" align="left">
           <img
             src="../../public/image/logoMobile.svg"
             alt=""
-            style="width: 120px; padding-top: 6px"
+            style="width: 160px; padding-top: 6px"
           />
         </div>
         <div class="col"></div>
@@ -402,10 +458,44 @@
           <div class="row padBox">
             <div class="col-4">Password</div>
             <div class="col">
-              <q-input class="inputBox" outlined v-model="userData.password" />
+              <q-input
+                class="inputBox"
+                outlined
+                v-model="userData.password"
+                :type="isPwd ? 'password' : 'text'"
+                ><template v-slot:append>
+                  <q-icon
+                    :name="isPwd ? 'visibility_off' : 'visibility'"
+                    class="cursor-pointer"
+                    @click="isPwd = !isPwd"
+                  /> </template
+              ></q-input>
+
+              <div
+                v-show="userData.password != '' && !isUserPassword()"
+                class="font14"
+                style="color: #e75427"
+              >
+                The password must have 6-12 characters.
+              </div>
+              <div
+                v-show="userData.password == ''"
+                class="font14"
+                style="color: #868686"
+              >
+                The password must have 6-12 characters.
+              </div>
+              <div
+                v-show="userData.password != '' && isUserPassword()"
+                class="font14"
+                style="color: #e75427"
+              >
+                &nbsp;
+              </div>
             </div>
           </div>
-          <div class="row padBox">
+
+          <div class="row q-pt-sm">
             <div class="col-4">Email address</div>
             <div class="col">
               <q-input class="inputBox" outlined v-model="userData.email" />
@@ -476,7 +566,7 @@
         </div>
         <div class="col-3"></div>
       </div>
-      <div class="row q-py-xl">
+      <div class="row q-pt-xl">
         <div class="col-4"></div>
         <div
           class="cursor-pointer font24"
@@ -509,6 +599,7 @@
         </div>
         <div class="col"></div>
       </div>
+      <div class="q-pt-md"></div>
       <div class="endPC q-mt-lg row items-center">
         <div class="col-2" align="center">
           <img
@@ -550,6 +641,7 @@ export default {
       confirmEmail: "",
       countryOptions: [],
       genderOptions: ["Female", "Male", "Unspecified"],
+      isPwd: true,
     };
   },
 
@@ -607,6 +699,12 @@ export default {
         this.$router.push("/syllabus");
       }
     },
+    // เช็คพาสเวิดให้มี 6-10 หลัก
+    isUserPassword() {
+      return (
+        this.userData.password.length > 5 && this.userData.password.length < 13
+      );
+    },
   },
   mounted() {
     this.getCountryList();
@@ -621,7 +719,8 @@ export default {
   height: 204px;
 }
 .padBox {
-  padding-top: 30px;
+  padding-top: 42px;
+  line-height: 50px;
 }
 .inputBox {
   height: 40px;
@@ -657,5 +756,21 @@ export default {
   background: #1976d2;
   color: white;
   border-radius: 5px;
+}
+.cancelBtmPc {
+  width: 175px;
+  height: 50px;
+  line-height: 50px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.createAccountBtnPc {
+  width: 323px;
+  height: 50px;
+  line-height: 50px;
+  background: #1976d2;
+  border-radius: 10px;
 }
 </style>
