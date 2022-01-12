@@ -30,7 +30,7 @@
           />
         </div>
         <div class="lineTablet"></div>
-        <div class="col q-px-md font18" style="color: white">
+        <div class="col q-px-md font18 textWhite">
           Trade and the sustainable development goals (SDGs)
         </div>
         <div class="col-1" align="center" @click="signOut()">
@@ -251,7 +251,7 @@
     <!-- PC  -->
     <div
       class="desktop-only shadow-6"
-      style="max-width: 1600px; width: 100%; margin: auto"
+      style="max-width: 1600px; width: 100%; margin: auto; position: relative"
     >
       <!-- *********Header********* -->
       <div class="headerPC row">
@@ -285,7 +285,7 @@
           />
         </div>
         <div class="linePC q-ma-md"></div>
-        <div class="col q-px-lg q-ma-md" style="color: white">
+        <div class="col q-pl-lg q-ma-md" style="color: white">
           <div class="font20">
             Trade and the sustainable development goals (SDGs)
           </div>
@@ -308,7 +308,7 @@
           <div class="row font16">
             <div
               class="selectMenuPC text-center cursor-pointer"
-              @click="menuPick1()"
+              @click="menuPick1(indexMenu1, indexMenu2)"
               :style="
                 menu % 2 == 1
                   ? 'color: #5aadff;border-bottom: 5px solid #5aadff;'
@@ -319,7 +319,7 @@
             </div>
             <div
               class="selectMenuPC text-center cursor-pointer"
-              @click="menuPick2()"
+              @click="menuPick2(indexMenu1, indexMenu2)"
               :style="
                 menu % 2 == 0
                   ? 'color: #5aadff;border-bottom: 5px solid #5aadff;'
@@ -332,7 +332,7 @@
           <div class="lineMenu"></div>
           <div class="contentPC q-pa-sm" style="">
             <!-- menu  -->
-            <div v-show="menu == 1" class="font14">
+            <div v-show="menu == 1" class="font14 modulPC">
               <q-list v-for="(item, index) in lessonData" :key="index">
                 <q-expansion-item
                   dark
@@ -340,12 +340,19 @@
                   header-class="font14"
                   group="somegroup"
                   :label="item.module"
+                  :header-style="indexMenu1 == index ? 'color: #5AADFF;' : ''"
                 >
                   <ul>
                     <li
                       v-for="(item2, index2) in item.section"
                       :key="index2"
                       class="q-py-sm cursor-pointer"
+                      :style="
+                        indexMenu1 == index && indexMenu2 == index2
+                          ? 'color: #5AADFF;'
+                          : ''
+                      "
+                      @click="setIndex(index, index2)"
                     >
                       {{ item2.lesson }}
                     </li>
@@ -354,19 +361,24 @@
               </q-list>
             </div>
             <!-- narrative  -->
-            <div v-show="menu == 2">narrative</div>
-          </div>
-        </div>
-        <div class="col">
-          content & vdo
-          <!-- end bar  -->
-          <div class="endBarPC row">
-            <div class="col font18 textWhite" align="center">
-              Introduction to Sustain Development Goals (SDGs)
+            <div v-show="menu == 2">
+              {{ lessonData[indexMenu1].section[indexMenu2].narrative }}
             </div>
           </div>
         </div>
+        <div class="col font64" align="center">
+          {{ lessonData[indexMenu1].section[indexMenu2].vdo }}
+          <!-- end bar  -->
+        </div>
       </div>
+
+      <div
+        class="endBarPC font18 textWhite absolute-bottom-right"
+        align="center"
+      >
+        Introduction to Sustain Development Goals (SDGs)
+      </div>
+
       <!-- ----  -->
     </div>
   </div>
@@ -381,27 +393,17 @@ export default {
       selectContent: "Module A-1: An overview",
       userName: "AUNNY",
       menu: 1, // 1=menu , 2=narrative
-      nameLeeson: [
-        "",
-        "Module A.1: An overview",
-        "Module A.2: Trade and development: tools and trends",
-        "Module A.3: Trade and environmental issues",
-        "Module A.4: Trade policy reforms and the SDGs",
-        "Module B.1.1:  How does trade affect poverty and inequality?",
-        "Module B.1.2:  Should we use trade restrictions to achieve zero hunger?",
-        "Module B.1.3:  Does international trade cause (inclusive) growth?",
-        "Module B.2.1:  Trade and sustainability 1: climate change and environment",
-        "Module B.2.2:  Trade and sustainability 2: education and intergenerational mobility",
-        "Module B.3.1:  Does trade lead to a race to the bottom in labour standards?",
-        "Module B.3.2: How does trade influence productivity and innovation?",
-        "Module B.3.3: Trade and responsible consumption/production",
-        "test sub 1",
-        "test sub 2",
-        "test sub 3",
-      ],
+      nameLeeson: [],
+      indexMenu1: 0,
+      indexMenu2: 0,
     };
   },
   methods: {
+    setIndex(index1, index2) {
+      this.indexMenu1 = index1;
+      this.indexMenu2 = index2;
+      this.selectContent = this.lessonData[index1].section[index2].lesson;
+    },
     goToHome() {
       this.$router.push("/");
     },
@@ -411,19 +413,22 @@ export default {
     signOut() {
       this.$router.push("/syllabus");
     },
-    menuPick1() {
+    menuPick1(index1, index2) {
       this.menu = 1;
-      this.selectContent = "exam";
     },
-    menuPick2() {
+    menuPick2(index1, index2) {
       this.menu = 2;
     },
     lessonPick(lesson) {
       this.selectContent = this.nameLeeson[lesson];
     },
+    loadUserData() {
+      // console.log(this.lessonData);
+    },
   },
   mounted() {
     this.lessonData = lessonJson;
+    this.loadUserData();
   },
 };
 </script>
@@ -433,6 +438,9 @@ export default {
   color: white;
   background: #1f2b35;
   width: 400px;
+}
+.modulPC {
+  height: calc(100vh - 170px);
 }
 .leftMenuTablet {
   color: white;
@@ -454,12 +462,10 @@ export default {
   overflow-y: auto;
 }
 .endBarPC {
-  position: absolute;
   max-width: 1200px;
-  bottom: 0px;
   line-height: 50px;
   height: 50px;
-  width: 100%;
+  width: calc(100vw - 400px);
   background: #1f2b35;
 }
 .endBarTablet {
@@ -472,5 +478,8 @@ export default {
 }
 .cardStyle {
   background-color: #1f2b35;
+}
+.listColor {
+  color: #5aadff;
 }
 </style>

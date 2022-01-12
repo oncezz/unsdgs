@@ -29,6 +29,16 @@ const routes = [
     path: "/study",
     component: () => import("pages/study.vue"),
   },
+  {
+    path: "/",
+    component: () => import("layouts/layoutLesson.vue"),
+    children: [
+      {
+        path: "/study2",
+        component: () => import("pages/study2.vue"),
+      },
+    ],
+  },
 ];
 
 export default routes;
