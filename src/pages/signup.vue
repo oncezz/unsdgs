@@ -40,13 +40,13 @@
         </div>
       </div>
       <!-- content  -->
-      <div>
-        <div class="q-pt-md" style="padding-left: 46px; padding-right: 61px">
+      <div class="q-px-xl">
+        <div class="q-pt-md">
           <div class="q-gutter-md" style="">
             <q-input class="" v-model="userData.username" label="Username" />
           </div>
         </div>
-        <div class="q-pt-md" style="padding-left: 46px; padding-right: 61px">
+        <div class="q-pt-md">
           <div class="q-gutter-y-md column">
             <q-input v-model="userData.password" label="Password"> </q-input>
           </div>
@@ -72,7 +72,7 @@
             &nbsp;
           </div>
         </div>
-        <div class="q-pt-sm" style="padding-left: 46px; padding-right: 61px">
+        <div class="q-pt-sm">
           <div class="q-gutter-md" style="">
             <q-input class="" v-model="userData.email" label="Email address" />
           </div>
@@ -97,7 +97,6 @@
         <div>
           <q-select
             class="q-pt-md"
-            style="padding-left: 46px; padding-right: 61px"
             label="Country"
             v-model="userData.country"
             :options="countryOptions"
@@ -106,13 +105,12 @@
         <div>
           <q-select
             class="q-pt-md"
-            style="padding-left: 46px; padding-right: 61px"
             label="Gender"
             v-model="userData.gender"
             :options="genderOptions"
           />
         </div>
-        <div class="q-pt-md" style="padding-left: 46px; padding-right: 61px">
+        <div class="q-pt-md">
           <div class="q-gutter-md" style="">
             <q-input class="" v-model="userData.jobTitle" label="Job title" />
           </div>
