@@ -31,7 +31,7 @@ export default function (/* { store, ssrContext } */) {
 Vue.mixin({
   data() {
     return {
-      serverpath: "http://localhost/unsdgs/",
+      serverpath: "http://localhost/unsdgs_api/",
     };
   },
   methods: {
