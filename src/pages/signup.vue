@@ -48,7 +48,19 @@
         </div>
         <div class="q-pt-md">
           <div class="q-gutter-y-md column">
-            <q-input v-model="userData.password" label="Password"> </q-input>
+            <q-input
+              v-model="userData.password"
+              label="Password"
+              :type="isPwd ? 'password' : 'text'"
+            >
+              <template v-slot:append>
+                <q-icon
+                  :name="isPwd ? 'visibility_off' : 'visibility'"
+                  class="cursor-pointer"
+                  @click="isPwd = !isPwd"
+                />
+              </template>
+            </q-input>
           </div>
           <div
             v-show="userData.password != '' && !isUserPassword()"
@@ -130,7 +142,9 @@
       <div>
         <div class="row q-pa-md justify-evenly q-mt-md">
           <div class="cancelBtmMobile" align="center">Cancel</div>
-          <div class="signupBtnMobile" align="center">Sign up</div>
+          <div class="signupBtnMobile" align="center" @click="createAccount()">
+            Sign up
+          </div>
         </div>
       </div>
 
@@ -458,6 +472,7 @@
             <div class="col">
               <q-input
                 class="inputBox"
+                ref="passwordIncorect"
                 outlined
                 v-model="userData.password"
                 :type="isPwd ? 'password' : 'text'"
@@ -502,7 +517,12 @@
           <div class="row padBox">
             <div class="col-4">Confirm email address</div>
             <div class="col">
-              <q-input class="inputBox" outlined v-model="confirmEmail" />
+              <q-input
+                ref="confirmEmailInput"
+                class="inputBox"
+                outlined
+                v-model="confirmEmail"
+              />
             </div>
           </div>
           <div class="row padBox">
@@ -665,11 +685,6 @@ export default {
     },
     // ปุ่มสร้าง account ใหม่
     async createAccount() {
-      //Check email กับ confirm email ว่าถูกต้อง
-      if (this.userData.email != this.confirmEmail) {
-        this.redNotify("Email and confirm email do not match.");
-        return;
-      }
       //Check ว่ามีการใส่ input ทุกช่อง
       if (
         this.userData.username.trim().length == 0 ||
@@ -683,9 +698,21 @@ export default {
         this.redNotify("Need all field to input");
         return;
       }
+      if (!this.isUserPassword()) {
+        this.$refs.passwordIncorect.$el.focus();
+        return;
+      }
+      //Check email กับ confirm email ว่าถูกต้อง
+      if (this.userData.email != this.confirmEmail) {
+        this.$refs.confirmEmailInput.$el.focus();
+
+        this.redNotify("Email and confirm email do not match.");
+        return;
+      }
       //ทำการ ลงทะเบียน
-      let url = this.serverpath + "registeruser.php";
+      let url = this.serverpath + "fe_signup_registeruser.php";
       let res = await axios.post(url, JSON.stringify(this.userData));
+
       if (res.data == "username exists") {
         this.redNotify("Username exists");
         return;
@@ -697,7 +724,7 @@ export default {
         this.$router.push("/syllabus");
       }
     },
-    // เช็คพาสเวิดให้มี 6-10 หลัก
+    // เช็คพาสเวิดให้มี 6-12 หลัก
     isUserPassword() {
       return (
         this.userData.password.length > 5 && this.userData.password.length < 13
