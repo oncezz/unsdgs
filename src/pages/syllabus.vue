@@ -23,19 +23,21 @@
       </div>
       <div style="height: 50px"></div>
       <!-- header  -->
-      <div class="topBarMobile q-pl-md" style="color: white">
-        <div class="font18 fontB">
+      <div class="topBarMobile q-pl-md q-pt-sm" style="color: white">
+        <div class="font18">
           Trade and the sustainable development goals (SDGs)
         </div>
-        <div class="font14 q-pt-md">
+        <div class="font14">
           Learn about how to make trade works for all and environment
         </div>
         <div class="q-pt-md">
-          Created by UNESCAP &nbsp;&nbsp;&nbsp; Last updated 7/2021
+          Created by UNESCAP &nbsp;&nbsp;&nbsp; Last updated {{ lastUpdate }}
         </div>
-        <div class="q-pt-sm row">
+        <div class="q-py-sm row">
           <div class="loginBtnMobile">
-            <div class="font18" align="center">Log in</div>
+            <div class="font18" align="center" @click="loginMobileBtn()">
+              Log in
+            </div>
           </div>
           <div class="signUpBtnMobile q-ml-md">
             <div
@@ -521,7 +523,7 @@
           </div>
           <div class="font18 textWhite">
             Learn about how to make trade works for all and environment<br />
-            Created by UNESCAP : Last updated {{ "7 / 2021" }}
+            Created by UNESCAP : Last updated {{ lastUpdate }}
           </div>
           <div class="row q-pt-sm">
             <div
@@ -989,7 +991,7 @@
           </div>
           <div class="font18 textWhite">
             Learn about how to make trade works for all and environment<br />
-            Created by UNESCAP : Last updated {{ "7 / 2021" }}
+            Created by UNESCAP : Last updated {{ lastUpdate }}
           </div>
           <div class="row q-pt-sm">
             <div
@@ -1422,8 +1424,9 @@
         </div>
       </div>
     </div>
-    <div class="fullscreen bgDrop" v-show="loginDia"></div>
-    <q-dialog v-model="loginDia">
+    <!-- bgDrop & dialog  -->
+    <div class="fullscreen bgDrop" v-show="loginDia || loginMobileDia"></div>
+    <q-dialog v-model="loginDia" persistent>
       <q-card class="loginDia">
         <div
           class="row items-center"
@@ -1474,7 +1477,7 @@
           <div class="col"></div>
         </div>
         <div class="row q-pt-lg justify-evenly">
-          <div class="diaBtn" align="center" @click="closeDia()">Cancle</div>
+          <div class="diaBtn" align="center" @click="closeDia()">Cancel</div>
           <div
             class="diaBtn textWhite"
             align="center"
@@ -1496,6 +1499,75 @@
         </div>
       </q-card>
     </q-dialog>
+    <!-- dialog mobile  -->
+    <q-dialog v-model="loginMobileDia">
+      <q-card class="loginMobileDia" align="center">
+        <div class="headerMobileDia row items-center">
+          <div class="col-4 cursor-pointer" align="center">
+            <img
+              class=""
+              src="../../public/image/logoMobile.svg"
+              alt=""
+              style="width: 94px; padding-top: 6px"
+            />
+          </div>
+          <div class="lineMobile"></div>
+          <div class="col q-px-sm font14 textWhite" align="left">
+            Trade and the sustainable development goals (SDGs)
+          </div>
+        </div>
+        <div class="font18 q-pt-sm" align="center">
+          Please log in to join our class
+        </div>
+        <div class="q-pt-md q-px-lg" align="center">
+          <div class="">
+            <q-input dense label="Username" v-model="userData.username" />
+          </div>
+          <div class="">
+            <q-input
+              dense
+              label="Password"
+              v-model="userData.password"
+              :type="isPwd ? 'password' : 'text'"
+              ><template v-slot:append>
+                <q-icon
+                  :name="isPwd ? 'visibility_off' : 'visibility'"
+                  class="cursor-pointer"
+                  @click="isPwd = !isPwd"
+                /> </template
+            ></q-input>
+          </div>
+          <div class="font14 fontU cursor-pointer q-pt-sm" align="right">
+            Forget password?
+          </div>
+          <div class="q-pt-md">
+            <div
+              class="diaBtn textWhite"
+              align="center"
+              style="
+                background: rgba(25, 118, 210, 1);
+                border: none;
+                width: 100%;
+              "
+              @click="goToClass()"
+            >
+              Log in
+            </div>
+          </div>
+        </div>
+
+        <div class="font14 q-pt-md row justify-center">
+          <div>Not a SDGs member?&nbsp;</div>
+          <div
+            class="text-blue cursor-pointer"
+            style="text-decoration: underline"
+            @click="goTosignup()"
+          >
+            Sign up for free account
+          </div>
+        </div>
+      </q-card>
+    </q-dialog>
   </div>
 </template>
 
@@ -1504,8 +1576,10 @@ import axios from "axios";
 export default {
   data() {
     return {
+      lastUpdate: "7 / 2021",
       isPwd: true,
       loginDia: false,
+      loginMobileDia: false,
       userData: {
         username: "",
         password: "",
@@ -1523,20 +1597,29 @@ export default {
       this.$router.push("/");
     },
     async goToClass() {
-      let url = this.serverpath + "loginuser.php";
+      if (this.userData.username == "" || this.userData.password == "") {
+        this.redNotify("Username or Password incorrect");
+        return;
+      }
+
+      let url = this.serverpath + "fe_syllabus_loginuser.php";
       let res = await axios.post(url, JSON.stringify(this.userData));
       console.log(res.data);
 
       if (res.data == "login fail") {
-        this.redNotify("Username / password Incorrect");
+        this.redNotify("Username or Password incorrect");
         return;
       } else {
-        this.$q.localStorage.getItem(res.data);
+        this.$q.localStorage.set("userid", res.data[0].id);
+        this.$q.localStorage.set("username", res.data[0].username);
         this.$router.push("/study");
       }
     },
     loginBtn() {
       this.loginDia = true;
+    },
+    loginMobileBtn() {
+      this.loginMobileDia = true;
     },
     closeDia() {
       this.loginDia = false;
@@ -1585,6 +1668,14 @@ td {
   height: 435px;
   border-radius: 5px;
 }
+.headerMobileDia {
+  background-color: #1f2b35;
+  height: 50px;
+}
+.loginMobileDia {
+  height: 320px;
+  border-radius: 5px;
+}
 .lineDia {
   width: 3px;
   height: 48px;
@@ -1621,7 +1712,7 @@ td {
 .topBarMobile {
   background-color: #33383d;
   width: 100%;
-  height: 214px;
+  height: 204px;
 }
 .ulMobile {
   margin-left: -15px;
