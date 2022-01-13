@@ -457,7 +457,6 @@ export default {
         this.$router.push("/syllabus");
       }
       this.userName = this.$q.localStorage.getItem("username");
-      // console.log(this.lessonData);
     },
   },
   mounted() {

@@ -628,7 +628,7 @@
                   dense
                   class="inputBox"
                   outlined
-                  v-model="userData.firstname"
+                  v-model.trim="editUser.firstname"
                 />
               </div>
             </div>
@@ -639,7 +639,7 @@
                   dense
                   class="inputBox"
                   outlined
-                  v-model="userData.lastname"
+                  v-model.trim="editUser.lastname"
                 />
               </div>
             </div>
@@ -650,7 +650,7 @@
                   dense
                   class="inputBox"
                   outlined
-                  v-model="userData.city"
+                  v-model.trim="editUser.city"
                 />
               </div>
             </div>
@@ -660,7 +660,7 @@
                 dense
                 class="inputBox"
                 outlined
-                v-model="userData.country"
+                v-model="editUser.country"
                 :options="countryOptions"
               />
             </div>
@@ -670,7 +670,7 @@
                 dense
                 class="inputBox"
                 outlined
-                v-model="userData.gender"
+                v-model="editUser.gender"
                 :options="genderOptions"
               />
             </div>
@@ -681,7 +681,7 @@
                   dense
                   class="inputBox"
                   outlined
-                  v-model="userData.jobtitle"
+                  v-model.trim="editUser.jobtitle"
                 />
               </div>
             </div>
@@ -692,7 +692,7 @@
                   dense
                   class="inputBox"
                   outlined
-                  v-model="userData.organization"
+                  v-model.trim="editUser.organization"
                 />
               </div>
             </div>
@@ -711,9 +711,9 @@
               line-height: 50px;
             "
             align="center"
-            @click=""
+            @click="goToExam()"
           >
-            Cancel
+            Back
           </div>
           <div class="col-1"></div>
           <div
@@ -757,7 +757,7 @@
                   dense
                   class="inputBox"
                   outlined
-                  v-model="changePassword.oldPassword"
+                  v-model.trim="changePassword.oldPassword"
                 />
               </div>
             </div>
@@ -768,7 +768,7 @@
                   dense
                   class="inputBox"
                   outlined
-                  v-model="changePassword.newPassword"
+                  v-model.trim="changePassword.newPassword"
                 />
               </div>
             </div>
@@ -780,7 +780,7 @@
                   dense
                   class="inputBox"
                   outlined
-                  v-model="changePassword.confirmPassword"
+                  v-model.trim="changePassword.confirmPassword"
                 />
               </div>
             </div>
@@ -799,9 +799,9 @@
               line-height: 50px;
             "
             align="center"
-            @click=""
+            @click="goToExam()"
           >
-            Cancel
+            Back
           </div>
           <div class="col-1"></div>
           <div
@@ -860,16 +860,16 @@ export default {
     return {
       userData: {
         id: "",
-        username: "Aunny",
-        password: "",
-        email: "Aunny@gmail.com",
-        firstName: "Aunny",
-        surName: "Sandee",
-        city: "Bangkok",
-        country: "Thailand",
-        gender: "Male",
-        jobTitle: "Teacher",
-        organization: "Suankularb Wittayalai",
+      },
+      editUser: {
+        id: "",
+        firstname: "",
+        lastname: "",
+        city: "",
+        country: "",
+        gender: "",
+        jobtitle: "",
+        organization: "",
       },
       changePassword: {
         oldPassword: "",
@@ -902,6 +902,7 @@ export default {
     },
     pageInfo() {
       this.selectPage = "Info";
+      this.loadUserData();
     },
     pagePassword() {
       this.selectPage = "Password";
@@ -909,30 +910,60 @@ export default {
     pageCertificate() {
       this.selectPage = "Certificate";
     },
-    saveInfo() {
-      this.$q.notify({
-        position: "top",
-        type: "positive",
-        message: `Edit account complete.`,
-      });
+    async saveInfo() {
+      if (
+        this.editUser.firstname == this.userData.firstname &&
+        this.editUser.lastname == this.userData.lastname &&
+        this.editUser.city == this.userData.city &&
+        this.editUser.country == this.userData.country &&
+        this.editUser.jobtitle == this.userData.jobtitle &&
+        this.editUser.gender == this.userData.gender &&
+        this.editUser.organization == this.userData.organization
+      ) {
+        this.greenNotify("Data don't change.");
+        return;
+      }
+
+      let url = this.serverpath + "fe_profile_edituser.php";
+      let res = await axios.post(url, JSON.stringify(this.editUser));
+
+      if (res.data == "OK") {
+        this.greenNotify("Edit account complete.");
+      }
+      this.loadUserData();
     },
-    saveNewPassword() {
-      this.$q.notify({
-        position: "top",
-        type: "positive",
-        message: `Change password complete.`,
-      });
+    async saveNewPassword() {
+      if (
+        this.changePassword.confirmPassword != this.changePassword.newPassword
+      ) {
+        this.redNotify("New password and Confirm new password don't match.");
+        return;
+      }
+      let url = this.serverpath + "fe_profile_loaduser.php";
+      let res = await axios.post(url, JSON.stringify(this.userData));
+      if (res.data == "password incorrect") {
+        this.redNotify("Old password incorrect.");
+      }
+      this.greenNotify("Change password complete.");
     },
     signOut() {
       this.$router.push("/syllabus");
     },
     async loadUserData() {
-      this.userData.id = this.$q.localStorage.getItem("userid");
+      this.editUser.id = this.userData.id =
+        this.$q.localStorage.getItem("userid");
 
       let url = this.serverpath + "fe_profile_loaduser.php";
       let res = await axios.post(url, JSON.stringify(this.userData));
       this.userData = res.data[0];
-      console.log(this.userData);
+
+      this.editUser.firstname = this.userData.firstname;
+      this.editUser.lastname = this.userData.lastname;
+      this.editUser.city = this.userData.city;
+      this.editUser.country = this.userData.country;
+      this.editUser.jobtitle = this.userData.jobtitle;
+      this.editUser.gender = this.userData.gender;
+      this.editUser.organization = this.userData.organization;
     },
   },
   mounted() {
