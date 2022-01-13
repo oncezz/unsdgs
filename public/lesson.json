@@ -25,6 +25,11 @@
         "lesson": "Summung up and looking ahead",
         "vdo": "a1-4.mp4",
         "narrative": "a1-4.txt"
+      },
+      {
+        "id": "a1-exam",
+        "lesson": "Quiz",
+        "quiz": "a1.html"
       }
     ]
   },
@@ -374,6 +379,15 @@
         "lesson": "Conclusion",
         "vdo": "b4-1-5.mp4",
         "narrative": "b4-1-5.txt"
+      }
+    ]
+  },
+  {
+    "module": "Exam",
+    "section": [
+      {
+        "id": "exam",
+        "lesson": "Exam"
       }
     ]
   }

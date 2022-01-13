@@ -254,27 +254,11 @@
       style="max-width: 1600px; width: 100%; margin: auto; position: relative"
     >
       <!-- *********Header********* -->
-      <div class="headerPC row">
-        <div class="row q-pt-md textWhite" style="width: 400px">
-          <img
-            class="q-pl-md"
-            src="../../public/image/profilePic.svg"
-            alt=""
-            style="height: 52px"
-          />
-          <div
-            class="font18 q-pl-lg cursor-pointer"
-            style="line-height: 52px; text-decoration: underline"
-            @click="goToProfile()"
-          >
-            {{ userName }}
-          </div>
-        </div>
-
+      <div class="headerPC row items-center">
         <div
-          class="col-2 cursor-pointer q-ma-md"
+          class="col-2 cursor-pointer"
           align="center"
-          style=""
+          style="width: 400px"
           @click="goToHome()"
         >
           <img
@@ -284,19 +268,39 @@
             style=""
           />
         </div>
-        <div class="linePC q-ma-md"></div>
+        <div class="linePC"></div>
         <div class="col q-pl-lg q-ma-md" style="color: white">
           <div class="font20">
             Trade and the sustainable development goals (SDGs)
           </div>
-          <div class="font16">{{ selectContent }}</div>
+        </div>
+        <div
+          class="textWhite cursor-pointer"
+          style="width: 90px"
+          align="center"
+          @click="goToProfile()"
+        >
+          <img
+            class=""
+            src="../../public/image/profilePic.svg"
+            alt=""
+            style="height: 30px"
+          />
+          <div class="font14 textWhite" style="">
+            {{ userName }}
+          </div>
         </div>
         <div
           class="col-1 q-ma-md cursor-pointer"
           align="center"
+          style="width: 90px"
           @click="signOut()"
         >
-          <img src="../../public/image/signOut.svg" alt="" />
+          <img
+            src="../../public/image/signOut.svg"
+            style="height: 30px"
+            alt=""
+          />
           <div class="font14 textWhite">sign out</div>
         </div>
       </div>
@@ -319,7 +323,9 @@
             </div>
             <div
               class="selectMenuPC text-center cursor-pointer"
-              @click="menuPick2(indexMenu1, indexMenu2)"
+              @click="
+                menuPick2(lessonData[indexMenu1].section[indexMenu2].narrative)
+              "
               :style="
                 menu % 2 == 0
                   ? 'color: #5aadff;border-bottom: 5px solid #5aadff;'
@@ -341,6 +347,7 @@
                   group="somegroup"
                   :label="item.module"
                   :header-style="indexMenu1 == index ? 'color: #5AADFF;' : ''"
+                  :default-opened="index == indexMenu1"
                 >
                   <ul>
                     <li
@@ -361,14 +368,26 @@
               </q-list>
             </div>
             <!-- narrative  -->
-            <div v-show="menu == 2">
-              {{ lessonData[indexMenu1].section[indexMenu2].narrative }}
-            </div>
+            <div
+              class="q-pa-sm q-pt-lg"
+              v-show="menu == 2"
+              v-html="narrativeText"
+            ></div>
           </div>
         </div>
-        <div class="col font64" align="center">
-          {{ lessonData[indexMenu1].section[indexMenu2].vdo }}
+        <div class="col font64" align="center" v-if="selectContent == 'Quiz'">
+          Quiz
           <!-- end bar  -->
+        </div>
+        <div
+          class="col font64"
+          align="center"
+          v-else-if="selectContent == 'Exam'"
+        >
+          Exam
+        </div>
+        <div class="col font64" align="center" v-else>
+          {{ lessonData[indexMenu1].section[indexMenu2].vdo }}
         </div>
       </div>
 
@@ -376,7 +395,7 @@
         class="endBarPC font18 textWhite absolute-bottom-right"
         align="center"
       >
-        Introduction to Sustain Development Goals (SDGs)
+        {{ selectContent }}
       </div>
 
       <!-- ----  -->
@@ -385,17 +404,20 @@
 </template>
 
 <script>
+import axios from "axios";
 import lessonJson from "../../public/lesson.json";
+
 export default {
   data() {
     return {
       lessonData: [],
-      selectContent: "Module A-1: An overview",
-      userName: "AUNNY",
+      selectContent: "",
+      userName: "ASrhdgsugh",
       menu: 1, // 1=menu , 2=narrative
       nameLeeson: [],
       indexMenu1: 0,
       indexMenu2: 0,
+      narrativeText: "",
     };
   },
   methods: {
@@ -411,24 +433,37 @@ export default {
       this.$router.push("/profile");
     },
     signOut() {
+      this.$q.localStorage.clear();
       this.$router.push("/syllabus");
     },
     menuPick1(index1, index2) {
       this.menu = 1;
     },
-    menuPick2(index1, index2) {
+    // narative
+    async menuPick2(textName) {
+      let data = {
+        lesson: textName,
+      };
+      let url = this.serverpath + "fe_study_loadtextnarative.php";
+      let res = await axios.post(url, JSON.stringify(data));
+      this.narrativeText = res.data;
       this.menu = 2;
     },
     lessonPick(lesson) {
       this.selectContent = this.nameLeeson[lesson];
     },
     loadUserData() {
+      if (this.$q.localStorage.getItem("username") == null) {
+        this.$router.push("/syllabus");
+      }
+      this.userName = this.$q.localStorage.getItem("username");
       // console.log(this.lessonData);
     },
   },
   mounted() {
-    this.lessonData = lessonJson;
     this.loadUserData();
+    this.lessonData = lessonJson;
+    this.setIndex(0, 0);
   },
 };
 </script>

@@ -628,7 +628,7 @@
                   dense
                   class="inputBox"
                   outlined
-                  v-model="userData.firstName"
+                  v-model="userData.firstname"
                 />
               </div>
             </div>
@@ -639,7 +639,7 @@
                   dense
                   class="inputBox"
                   outlined
-                  v-model="userData.surName"
+                  v-model="userData.lastname"
                 />
               </div>
             </div>
@@ -681,7 +681,7 @@
                   dense
                   class="inputBox"
                   outlined
-                  v-model="userData.jobTitle"
+                  v-model="userData.jobtitle"
                 />
               </div>
             </div>
@@ -827,7 +827,11 @@
         v-show="selectPage == 'Certificate'"
         align="center"
       >
-        <div class="font48 q-pt-xl" align="center" v-show="userData.exam == 0">
+        <div
+          class="font48 q-pt-xl"
+          align="center"
+          v-show="userData.complete == 0"
+        >
           <div class="q-py-lg"></div>
           Sorry! You must pass
           <span class="toExam" @click="goToExam()">the exam.</span>
@@ -838,7 +842,7 @@
             <img src="../../public/image/mustPassExam.svg" alt="" style="" />
           </div>
         </div>
-        <div class="" align="center" v-show="userData.exam == 1">
+        <div class="" align="center" v-show="userData.complete == 1">
           <div class="q-pt-lg">
             <img src="../../public/image/certi.jpg" alt="" style="" />
           </div>
@@ -849,11 +853,13 @@
 </template>
 
 <script>
+import axios from "axios";
 import countryJson from "../../public/country_list.json";
 export default {
   data() {
     return {
       userData: {
+        id: "",
         username: "Aunny",
         password: "",
         email: "Aunny@gmail.com",
@@ -864,7 +870,6 @@ export default {
         gender: "Male",
         jobTitle: "Teacher",
         organization: "Suankularb Wittayalai",
-        exam: 0, // 0 not pass, 1 pass exam
       },
       changePassword: {
         oldPassword: "",
@@ -881,7 +886,7 @@ export default {
       this.$router.push("/");
     },
     goToExam() {
-      this.$router.push("/exam");
+      this.$router.push("/study");
     },
     getCountryList() {
       let tempOptions = [];
@@ -921,8 +926,17 @@ export default {
     signOut() {
       this.$router.push("/syllabus");
     },
+    async loadUserData() {
+      this.userData.id = this.$q.localStorage.getItem("userid");
+
+      let url = this.serverpath + "fe_profile_loaduser.php";
+      let res = await axios.post(url, JSON.stringify(this.userData));
+      this.userData = res.data[0];
+      console.log(this.userData);
+    },
   },
   mounted() {
+    this.loadUserData();
     this.getCountryList();
   },
 };
