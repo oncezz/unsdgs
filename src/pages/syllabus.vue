@@ -1604,7 +1604,6 @@ export default {
 
       let url = this.serverpath + "fe_syllabus_loginuser.php";
       let res = await axios.post(url, JSON.stringify(this.userData));
-      console.log(res.data);
 
       if (res.data == "login fail") {
         this.redNotify("Username or Password incorrect");
