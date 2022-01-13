@@ -33,34 +33,36 @@
         <div class="col q-px-md font18 textWhite">
           Trade and the sustainable development goals (SDGs)
         </div>
-        <div class="col-1" align="center" @click="signOut()">
+        <div
+          class="textWhite"
+          @click="goToProfile()"
+          align="center"
+          style="width: 70px"
+        >
           <img
-            style="margin-top: 8px"
-            src="../../public/image/signOut.svg"
+            class=""
+            src="../../public/image/profilePic.svg"
             alt=""
+            height="18px"
           />
-          <div class="font14 textWhite" style="margin-top: -8px">sign out</div>
+          <div class="font14">
+            {{ userName }}
+          </div>
+        </div>
+        <div
+          class="col-1"
+          align="center"
+          @click="signOut()"
+          style="width: 70px"
+        >
+          <img src="../../public/image/signOut.svg" height="18px" alt="" />
+          <div class="font14 textWhite">sign out</div>
         </div>
       </div>
       <div class="q-pa-md" style="height: 60px"></div>
       <!-- end header  -->
       <div class="row">
         <div class="leftMenuTablet">
-          <div class="row q-pl-lg items-center textWhite" style="height: 50px">
-            <img
-              class="q-pl-md"
-              src="../../public/image/profilePic.svg"
-              alt=""
-              style="height: 34px"
-            />
-            <div
-              class="font18 q-pl-lg cursor-pointer"
-              style="line-height: 52px; text-decoration: underline"
-              @click="goToProfile()"
-            >
-              {{ userName }}
-            </div>
-          </div>
           <div class="lineMenu"></div>
           <div class="row">
             <div
