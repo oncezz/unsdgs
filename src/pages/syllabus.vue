@@ -1425,7 +1425,7 @@
       </div>
     </div>
     <!-- bgDrop & dialog  -->
-    <div class="fullscreen bgDrop" v-show="loginDia || loginMobileDia"></div>
+    <div class="fullscreen bgDrop" v-show="loginDia"></div>
     <q-dialog v-model="loginDia" persistent>
       <q-card class="loginDia">
         <div
@@ -1444,63 +1444,89 @@
             Trade and the sustainable development goals (SDGs)
           </div>
         </div>
-        <div class="font18 q-pt-md" align="center">
-          Please log in to join our class
+        <!-- endheader -->
+        <div v-show="!isForgetPassword">
+          <div class="font18 q-pt-md" align="center">
+            Please log in to join our class
+          </div>
+          <div class="row q-pt-md">
+            <div class="col"></div>
+            <div class="col-9">
+              <div class="font18">Username</div>
+              <div class="">
+                <q-input class="" dense outlined v-model="userData.username" />
+              </div>
+              <div class="font18 q-pt-lg">Password</div>
+              <div class="">
+                <q-input
+                  class=""
+                  dense
+                  outlined
+                  v-model="userData.password"
+                  :type="isPwd ? 'password' : 'text'"
+                  ><template v-slot:append>
+                    <q-icon
+                      :name="isPwd ? 'visibility_off' : 'visibility'"
+                      class="cursor-pointer"
+                      @click="isPwd = !isPwd"
+                    /> </template
+                ></q-input>
+              </div>
+              <div
+                @click="toggleForget()"
+                class="font14 fontU cursor-pointer q-pt-sm"
+                align="right"
+              >
+                Forget password?
+              </div>
+            </div>
+            <div class="col"></div>
+          </div>
+          <div class="row q-pt-lg justify-evenly">
+            <div class="diaBtn" align="center" @click="closeDia()">Cancel</div>
+            <div
+              class="diaBtn textWhite"
+              align="center"
+              style="background-color: #1976d2; border: none"
+              @click="goToClass()"
+            >
+              Log in
+            </div>
+          </div>
+          <div class="font14 q-pt-lg row justify-center">
+            <div>Not a SDGs member?&nbsp;</div>
+            <div
+              class="text-blue cursor-pointer"
+              style="text-decoration: underline"
+              @click="goTosignup()"
+            >
+              Sign up for free account
+            </div>
+          </div>
         </div>
-        <div class="row q-pt-md">
-          <div class="col"></div>
-          <div class="col-9">
-            <div class="font18">Username</div>
+        <div v-show="isForgetPassword" align="center" class="q-pa-md">
+          <div class="font18 q-pt-lg">Forget password</div>
+          <div class="q-px-lg q-pt-xl">
+            <div class="font18" align="left">Email</div>
             <div class="">
               <q-input class="" dense outlined v-model="userData.username" />
             </div>
-            <div class="font18 q-pt-lg">Password</div>
-            <div class="">
-              <q-input
-                class=""
-                dense
-                outlined
-                v-model="userData.password"
-                :type="isPwd ? 'password' : 'text'"
-                ><template v-slot:append>
-                  <q-icon
-                    :name="isPwd ? 'visibility_off' : 'visibility'"
-                    class="cursor-pointer"
-                    @click="isPwd = !isPwd"
-                  /> </template
-              ></q-input>
+            <div class="row q-pt-xl justify-evenly">
+              <div class="diaBtn" @click="toggleForget()">Back to login</div>
+              <div
+                @click="submitEmail()"
+                class="diaBtn text-white"
+                style="background-color: #1976d2; border: none"
+              >
+                submit
+              </div>
             </div>
-            <div class="font14 fontU cursor-pointer q-pt-sm" align="right">
-              Forget password?
-            </div>
-          </div>
-          <div class="col"></div>
-        </div>
-        <div class="row q-pt-lg justify-evenly">
-          <div class="diaBtn" align="center" @click="closeDia()">Cancel</div>
-          <div
-            class="diaBtn textWhite"
-            align="center"
-            style="background-color: #1976d2; border: none"
-            @click="goToClass()"
-          >
-            Log in
-          </div>
-        </div>
-        <div class="font14 q-pt-lg row justify-center">
-          <div>Not a SDGs member?&nbsp;</div>
-          <div
-            class="text-blue cursor-pointer"
-            style="text-decoration: underline"
-            @click="goTosignup()"
-          >
-            Sign up for free account
           </div>
         </div>
       </q-card>
     </q-dialog>
     <!-- dialog mobile  -->
-    <q-dialog v-model="loginMobileDia">
+    <!-- <q-dialog v-model="loginMobileDia">
       <q-card class="loginMobileDia" align="center">
         <div class="headerMobileDia row items-center">
           <div class="col-4 cursor-pointer" align="center">
@@ -1567,7 +1593,7 @@
           </div>
         </div>
       </q-card>
-    </q-dialog>
+    </q-dialog> -->
   </div>
 </template>
 
@@ -1578,15 +1604,22 @@ export default {
     return {
       lastUpdate: "7 / 2021",
       isPwd: true,
-      loginDia: false,
-      loginMobileDia: false,
+      isForgetPassword: true,
+      loginDia: true,
       userData: {
         username: "",
         password: "",
+        useremail: "",
       },
     };
   },
   methods: {
+    submitEmail() {
+      this.greenNotify("Username and Password was sent to your email address");
+    },
+    toggleForget() {
+      this.isForgetPassword = !this.isForgetPassword;
+    },
     goToReferences() {
       this.$router.push("/references");
     },
