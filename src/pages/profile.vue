@@ -872,6 +872,7 @@ export default {
         organization: "",
       },
       changePassword: {
+        id: "",
         oldPassword: "",
         newPassword: "",
         confirmPassword: "",
@@ -920,7 +921,7 @@ export default {
         this.editUser.gender == this.userData.gender &&
         this.editUser.organization == this.userData.organization
       ) {
-        this.greenNotify("Data don't change.");
+        this.greenNotify("Datas don't change.");
         return;
       }
 
@@ -939,10 +940,18 @@ export default {
         this.redNotify("New password and Confirm new password don't match.");
         return;
       }
-      let url = this.serverpath + "fe_profile_loaduser.php";
-      let res = await axios.post(url, JSON.stringify(this.userData));
+
+      if (this.changePassword.oldPassword == this.changePassword.newPassword) {
+        this.greenNotify("Password doesn't change.");
+        return;
+      }
+
+      this.changePassword.id = this.userData.id;
+      let url = this.serverpath + "fe_profile_changepassword.php";
+      let res = await axios.post(url, JSON.stringify(this.changePassword));
       if (res.data == "password incorrect") {
         this.redNotify("Old password incorrect.");
+        return;
       }
       this.greenNotify("Change password complete.");
     },
