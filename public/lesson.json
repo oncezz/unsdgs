@@ -27,7 +27,7 @@
         "narrative": "a1-4.txt"
       },
       {
-        "id": "a1-exam",
+        "id": "a1-quiz",
         "lesson": "Quiz",
         "quiz": "a1.html"
       }

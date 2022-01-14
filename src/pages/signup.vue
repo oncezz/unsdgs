@@ -280,6 +280,7 @@
             <div class="col">
               <q-input
                 class="inputBoxTablet"
+                ref="confirmEmailInput"
                 outlined
                 v-model="userData.firstName"
               />
@@ -511,18 +512,18 @@
           <div class="row q-pt-sm">
             <div class="col-4">Email address</div>
             <div class="col">
-              <q-input class="inputBox" outlined v-model="userData.email" />
+              <q-input
+                class="inputBox"
+                ref="confirmEmailInput"
+                outlined
+                v-model="userData.email"
+              />
             </div>
           </div>
           <div class="row padBox">
             <div class="col-4">Confirm email address</div>
             <div class="col">
-              <q-input
-                ref="confirmEmailInput"
-                class="inputBox"
-                outlined
-                v-model="confirmEmail"
-              />
+              <q-input class="inputBox" outlined v-model="confirmEmail" />
             </div>
           </div>
           <div class="row padBox">

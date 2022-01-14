@@ -541,6 +541,9 @@
             >
               Sign up
             </div>
+            <div class="absolute-right">
+              <img src="../../public/image/watermask.svg" alt="" />
+            </div>
           </div>
         </div>
         <!-- <div><img src="../../public/image/watermask.svg" alt="" /></div> -->
@@ -978,7 +981,7 @@
           />
         </div>
         <div class="linePC"></div>
-        <div class="col q-px-lg font42" style="color: white">
+        <div class="col q-px-lg font36" style="color: white">
           Trade and the sustainable development goals (SDGs)
         </div>
       </div>
@@ -1011,7 +1014,9 @@
             </div>
           </div>
         </div>
-        <div><img src="../../public/image/watermask.svg" alt="" /></div>
+        <div class="absolute-right">
+          <img src="../../public/image/watermask.svg" alt="" />
+        </div>
       </div>
       <!-- end top bar  -->
       <div class="q-ma-md font18 q-pl-lg" style="">
@@ -1604,8 +1609,8 @@ export default {
     return {
       lastUpdate: "7 / 2021",
       isPwd: true,
-      isForgetPassword: true,
-      loginDia: true,
+      isForgetPassword: false,
+      loginDia: false,
       userData: {
         username: "",
         password: "",
@@ -1662,6 +1667,7 @@ export default {
 
 <style lang="scss" scoped>
 .topBar {
+  position: relative;
   background-color: #33383d;
   width: 100%;
   height: 204px;

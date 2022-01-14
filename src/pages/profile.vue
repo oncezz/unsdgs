@@ -302,7 +302,7 @@
                   dense
                   class="inputBoxTablet"
                   outlined
-                  v-model="userData.firstName"
+                  v-model="editUser.firstName"
                 />
               </div>
             </div>
@@ -313,7 +313,7 @@
                   dense
                   class="inputBoxTablet"
                   outlined
-                  v-model="userData.surName"
+                  v-model="editUser.surName"
                 />
               </div>
             </div>
@@ -324,7 +324,7 @@
                   dense
                   class="inputBoxTablet"
                   outlined
-                  v-model="userData.city"
+                  v-model="editUser.city"
                 />
               </div>
             </div>
@@ -334,7 +334,7 @@
                 dense
                 class="inputBoxTablet"
                 outlined
-                v-model="userData.country"
+                v-model="editUser.country"
                 :options="countryOptions"
               />
             </div>
@@ -344,7 +344,7 @@
                 dense
                 class="inputBoxTablet"
                 outlined
-                v-model="userData.gender"
+                v-model="editUser.gender"
                 :options="genderOptions"
               />
             </div>
@@ -355,7 +355,7 @@
                   dense
                   class="inputBoxTablet"
                   outlined
-                  v-model="userData.jobTitle"
+                  v-model="editUser.jobTitle"
                 />
               </div>
             </div>
@@ -366,7 +366,7 @@
                   dense
                   class="inputBoxTablet"
                   outlined
-                  v-model="userData.organization"
+                  v-model="editUser.organization"
                 />
               </div>
             </div>
@@ -385,9 +385,9 @@
               line-height: 50px;
             "
             align="center"
-            @click=""
+            @click="goToExam()"
           >
-            Cancel
+            Back
           </div>
           <div class="col-1"></div>
           <div
@@ -482,9 +482,9 @@
               line-height: 50px;
             "
             align="center"
-            @click=""
+            @click="goToExam()"
           >
-            Cancel
+            Back
           </div>
           <div class="col-1"></div>
           <div
@@ -883,6 +883,9 @@ export default {
     };
   },
   methods: {
+    goTosyllabus() {
+      this.$router.push("/syllabus");
+    },
     goHome() {
       this.$router.push("/");
     },

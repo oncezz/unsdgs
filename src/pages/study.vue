@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- mobile -->
-    <div class="mobile-only lt-sm">
+    <!-- <div class="mobile-only lt-sm">
       <div class="headerMobile row items-center" style="z-index: 999">
         <div class="col-4" align="center" style="">
           <img
@@ -16,12 +16,17 @@
           Trade and the sustainable development goals (SDGs)
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- tablet  -->
     <div class="mobile-only gt-xs orientation-portrait">หมุนหน้าจอ</div>
     <div class="mobile-only gt-xs orientation-landscape">
       <div class="headerTablet row items-center" style="z-index: 999">
-        <div class="col-3" align="center" style="" @click="goHome()">
+        <div
+          class="col-3"
+          align="center"
+          style="width: 316px"
+          @click="goHome()"
+        >
           <img
             class="picHeadTablet"
             src="../../public/image/logoMobile.svg"
@@ -62,7 +67,7 @@
       <div class="q-pa-md" style="height: 60px"></div>
       <!-- end header  -->
       <div class="row">
-        <div class="leftMenuTablet">
+        <div class="leftMenuTablet q-pt-lg">
           <div class="lineMenu"></div>
           <div class="row">
             <div
@@ -78,7 +83,9 @@
             </div>
             <div
               class="selectMenuPC text-center cursor-pointer"
-              @click="menuPick2()"
+              @click="
+                menuPick2(lessonData[indexMenu1].section[indexMenu2].narrative)
+              "
               :style="
                 menu % 2 == 0
                   ? 'color: #5aadff;border-bottom: 5px solid #5aadff;'
@@ -89,163 +96,66 @@
             </div>
           </div>
           <div class="lineMenu"></div>
-          <div class="q-pa-sm" style="">
+          <div class="contentTablet q-pa-sm" style="">
             <!-- menu  -->
-            <div v-show="menu == 1">
-              <q-list>
+            <div v-show="menu == 1" class="font14 modulTablet">
+              <q-list v-for="(item, index) in lessonData" :key="index">
                 <q-expansion-item
-                  class="font18"
+                  dark
+                  expand-separator
+                  header-class="font14"
                   group="somegroup"
-                  :label="nameLeeson[1]"
-                  @show="lessonPick(1)"
+                  :label="item.module"
+                  :header-style="indexMenu1 == index ? 'color: #5AADFF;' : ''"
+                  :default-opened="index == indexMenu1"
                 >
-                  <q-card>
-                    <q-card-section class="cardStyle">
-                      <ul>
-                        <li>
-                          Introduction to Sustain Development Goals (SDGs)
-                        </li>
-                        <li>SDGs and Trade</li>
-                        <li>Trade and sustainable development</li>
-                        <li>Summing up</li>
-                      </ul>
-                    </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[2]"
-                  @show="lessonPick(2)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[3]"
-                  @show="lessonPick(3)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[4]"
-                  @show="lessonPick(4)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[5]"
-                  @show="lessonPick(5)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[6]"
-                  @show="lessonPick(6)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[7]"
-                  @show="lessonPick(7)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[8]"
-                  @show="lessonPick(8)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[9]"
-                  @show="lessonPick(9)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[10]"
-                  @show="lessonPick(10)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[11]"
-                  @show="lessonPick(11)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-separator />
-                <q-expansion-item
-                  class="font18"
-                  group="somegroup"
-                  :label="nameLeeson[12]"
-                  @show="lessonPick(12)"
-                >
-                  <q-card>
-                    <q-card-section class="cardStyle"> </q-card-section>
-                  </q-card>
+                  <ul>
+                    <li
+                      v-for="(item2, index2) in item.section"
+                      :key="index2"
+                      class="q-py-sm cursor-pointer"
+                      :style="
+                        indexMenu1 == index && indexMenu2 == index2
+                          ? 'color: #5AADFF;'
+                          : ''
+                      "
+                      @click="setIndex(index, index2)"
+                    >
+                      {{ item2.lesson }}
+                    </li>
+                  </ul>
                 </q-expansion-item>
               </q-list>
             </div>
             <!-- narrative  -->
-            <div v-show="menu == 2">narrative</div>
+            <div
+              class="q-pa-sm q-pt-lg"
+              v-show="menu == 2"
+              v-html="narrativeText"
+            ></div>
           </div>
         </div>
-        <div class="col">
-          content & vdo
+        <div class="col" style="position: relative">
+          <div class="col font64" align="center" v-if="selectContent == 'Quiz'">
+            Quiz
+            <!-- end bar  -->
+          </div>
+          <div
+            class="col font64"
+            align="center"
+            v-else-if="selectContent == 'Exam'"
+          >
+            Exam
+          </div>
+          <div class="col font64" align="center" v-else>
+            {{ lessonData[indexMenu1].section[indexMenu2].vdo }}
+          </div>
           <!-- end bar  -->
-          <div class="endBarTablet row">
-            <div class="col font18 textWhite" align="center">
-              Introduction to Sustain Development Goals (SDGs)
-            </div>
+          <div
+            class="absolute-bottom endBarTablet font18 textWhite"
+            align="center"
+          >
+            {{ selectContent }}
           </div>
         </div>
       </div>
@@ -260,7 +170,7 @@
         <div
           class="col-2 cursor-pointer"
           align="center"
-          style="width: 400px"
+          style="width: 396px"
           @click="goToHome()"
         >
           <img
@@ -464,6 +374,7 @@ export default {
   mounted() {
     this.loadUserData();
     this.lessonData = lessonJson;
+    console.log(this.lessonData);
     this.setIndex(0, 0);
   },
 };
@@ -477,6 +388,9 @@ export default {
 }
 .modulPC {
   height: calc(100vh - 170px);
+}
+.modulTablet {
+  height: calc(100vh - 120px);
 }
 .leftMenuTablet {
   color: white;
@@ -497,6 +411,10 @@ export default {
   height: calc(100vh - 136px);
   overflow-y: auto;
 }
+.contentTablet {
+  height: calc(100vh - 133px);
+  overflow-y: auto;
+}
 .endBarPC {
   max-width: 1200px;
   line-height: 50px;
@@ -505,8 +423,6 @@ export default {
   background: #1f2b35;
 }
 .endBarTablet {
-  position: absolute;
-  bottom: 0px;
   line-height: 50px;
   height: 50px;
   width: 100%;
@@ -517,5 +433,23 @@ export default {
 }
 .listColor {
   color: #5aadff;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1f2b35;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 </style>
