@@ -342,12 +342,12 @@ export default {
       this.indexMenu2 = index2;
       this.selectContent = this.lessonData[index1].section[index2].lesson;
       if (this.selectContent == "Quiz") {
-        console.log(this.lessonData[index1].section[index2].quiz);
-        // let data = {};
-        // console.log(data);
-        // let url = this.serverpath + "fe_study_loadquiz.php";
-        // let res = await axios.post(url, JSON.stringify(data));
-        // this.quizText = res.data;
+        let data = {
+          quiz: this.lessonData[index1].section[index2].quiz,
+        };
+        let url = this.serverpath + "fe_study_loadquiz.php";
+        let res = await axios.post(url, JSON.stringify(data));
+        this.quizText = res.data;
       }
     },
     goToHome() {
