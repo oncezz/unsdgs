@@ -72,6 +72,12 @@
         "lesson": "Looking ahead",
         "vdo": "a2-6.mp4",
         "narrative": "a2-6.txt"
+      },
+      {
+        "id": "a2-quiz",
+        "lesson": "Quiz",
+        "narrative": "qa2.txt",
+        "quiz": "a2.html"
       }
     ]
   },
@@ -101,6 +107,12 @@
         "lesson": "Looking ahead",
         "vdo": "a3-4.mp4",
         "narrative": "a3-4.txt"
+      },
+      {
+        "id": "a3-quiz",
+        "lesson": "Quiz",
+        "narrative": "qa3.txt",
+        "quiz": "a3.html"
       }
     ]
   },
@@ -130,6 +142,12 @@
         "lesson": "Conclusion",
         "vdo": "a4-4.mp4",
         "narrative": "a4-4.txt"
+      },
+      {
+        "id": "a4-quiz",
+        "lesson": "Quiz",
+        "narrative": "qa4.txt",
+        "quiz": "a4.html"
       }
     ]
   },
@@ -159,6 +177,12 @@
         "lesson": "Summing up",
         "vdo": "b1-1-4.mp4",
         "narrative": "b1-1-4.txt"
+      },
+      {
+        "id": "b1-1-quiz",
+        "lesson": "Quiz",
+        "narrative": "qb1-1.txt",
+        "quiz": "b1-1.html"
       }
     ]
   },
@@ -188,6 +212,12 @@
         "lesson": "Summing up",
         "vdo": "b1-2-4.mp4",
         "narrative": "b1-2-4.txt"
+      },
+      {
+        "id": "b1-2-quiz",
+        "lesson": "Quiz",
+        "narrative": "qb1-2.txt",
+        "quiz": "b1-2.html"
       }
     ]
   },
@@ -217,6 +247,12 @@
         "lesson": "Why  free trade is not sufficient to achieve inclusive growth ?",
         "vdo": "b1-3-4.mp4",
         "narrative": "b1-3-4.txt"
+      },
+      {
+        "id": "b1-3-quiz",
+        "lesson": "Quiz",
+        "narrative": "qb1-3.txt",
+        "quiz": "b1-3.html"
       }
     ]
   },
@@ -246,6 +282,12 @@
         "lesson": "Some policy solutions",
         "vdo": "b2-1-4.mp4",
         "narrative": "b2-1-4.txt"
+      },
+      {
+        "id": "b2-1-quiz",
+        "lesson": "Quiz",
+        "narrative": "qb2-1.txt",
+        "quiz": "b2-1.html"
       }
     ]
   },
@@ -281,6 +323,12 @@
         "lesson": "Summing up",
         "vdo": "b3-1-5.mp4",
         "narrative": "b3-1-5.txt"
+      },
+      {
+        "id": "b3-1-quiz",
+        "lesson": "Quiz",
+        "narrative": "qb3-1.txt",
+        "quiz": "b3-1.html"
       }
     ]
   },
@@ -316,6 +364,12 @@
         "lesson": "Summing up",
         "vdo": "b3-2-5.mp4",
         "narrative": "b3-2-5.txt"
+      },
+      {
+        "id": "b3-2-quiz",
+        "lesson": "Quiz",
+        "narrative": "qb3-2.txt",
+        "quiz": "b3-2.html"
       }
     ]
   },
@@ -345,6 +399,12 @@
         "lesson": "Summing up",
         "vdo": "b3-3-4.mp4",
         "narrative": "b3-3-4.txt"
+      },
+      {
+        "id": "b3-3-quiz",
+        "lesson": "Quiz",
+        "narrative": "qb3-3.txt",
+        "quiz": "b3-3.html"
       }
     ]
   },
@@ -380,6 +440,12 @@
         "lesson": "Conclusion",
         "vdo": "b4-1-5.mp4",
         "narrative": "b4-1-5.txt"
+      },
+      {
+        "id": "b4-1-quiz",
+        "lesson": "Quiz",
+        "narrative": "qb4-1.txt",
+        "quiz": "b4-1.html"
       }
     ]
   },
