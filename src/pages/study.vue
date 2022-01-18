@@ -287,8 +287,12 @@
             ></div>
           </div>
         </div>
-        <div class="col font64" align="center" v-if="selectContent == 'Quiz'">
-          Quiz
+        <div
+          class="col font64"
+          align="center"
+          v-if="selectContent == 'Quiz'"
+          v-html="quizText"
+        >
           <!-- end bar  -->
         </div>
         <div
@@ -326,17 +330,25 @@ export default {
       selectContent: "",
       userName: "ASrhdgsugh",
       menu: 1, // 1=menu , 2=narrative
-      nameLeeson: [],
       indexMenu1: 0,
       indexMenu2: 0,
       narrativeText: "",
+      quizText: "",
     };
   },
   methods: {
-    setIndex(index1, index2) {
+    async setIndex(index1, index2) {
       this.indexMenu1 = index1;
       this.indexMenu2 = index2;
       this.selectContent = this.lessonData[index1].section[index2].lesson;
+      if (this.selectContent == "Quiz") {
+        console.log(this.lessonData[index1].section[index2].quiz);
+        // let data = {};
+        // console.log(data);
+        // let url = this.serverpath + "fe_study_loadquiz.php";
+        // let res = await axios.post(url, JSON.stringify(data));
+        // this.quizText = res.data;
+      }
     },
     goToHome() {
       this.$router.push("/");
@@ -360,9 +372,6 @@ export default {
       let res = await axios.post(url, JSON.stringify(data));
       this.narrativeText = res.data;
       this.menu = 2;
-    },
-    lessonPick(lesson) {
-      this.selectContent = this.nameLeeson[lesson];
     },
     loadUserData() {
       if (this.$q.localStorage.getItem("username") == null) {
