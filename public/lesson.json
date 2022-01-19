@@ -84,6 +84,12 @@
         "lesson": "Quiz",
         "narrative": "qa2.txt",
         "quiz": "a2.html"
+      },
+      {
+        "id": "a2-answer",
+        "lesson": "Brief quiz answers",
+        "narrative": "quiz.txt",
+        "quiz": "a2s.html"
       }
     ]
   },
@@ -119,6 +125,12 @@
         "lesson": "Quiz",
         "narrative": "qa3.txt",
         "quiz": "a3.html"
+      },
+      {
+        "id": "a3-answer",
+        "lesson": "Brief quiz answers",
+        "narrative": "quiz.txt",
+        "quiz": "a3s.html"
       }
     ]
   },
@@ -154,6 +166,12 @@
         "lesson": "Quiz",
         "narrative": "qa4.txt",
         "quiz": "a4.html"
+      },
+      {
+        "id": "a4-answer",
+        "lesson": "Brief quiz answers",
+        "narrative": "quiz.txt",
+        "quiz": "a4s.html"
       }
     ]
   },
@@ -189,6 +207,12 @@
         "lesson": "Quiz",
         "narrative": "qb1-1.txt",
         "quiz": "b1-1.html"
+      },
+      {
+        "id": "b1-1-answer",
+        "lesson": "Brief quiz answers",
+        "narrative": "quiz.txt",
+        "quiz": "b1-1s.html"
       }
     ]
   },
@@ -224,6 +248,12 @@
         "lesson": "Quiz",
         "narrative": "qb1-2.txt",
         "quiz": "b1-2.html"
+      },
+      {
+        "id": "b1-2-answer",
+        "lesson": "Brief quiz answers",
+        "narrative": "quiz.txt",
+        "quiz": "b1-2s.html"
       }
     ]
   },
@@ -259,6 +289,12 @@
         "lesson": "Quiz",
         "narrative": "qb1-3.txt",
         "quiz": "b1-3.html"
+      },
+      {
+        "id": "b1-3-answer",
+        "lesson": "Brief quiz answers",
+        "narrative": "quiz.txt",
+        "quiz": "b1-3s.html"
       }
     ]
   },
@@ -294,6 +330,12 @@
         "lesson": "Quiz",
         "narrative": "qb2-1.txt",
         "quiz": "b2-1.html"
+      },
+      {
+        "id": "b2-1-answer",
+        "lesson": "Brief quiz answers",
+        "narrative": "quiz.txt",
+        "quiz": "b2-1s.html"
       }
     ]
   },
@@ -335,6 +377,12 @@
         "lesson": "Quiz",
         "narrative": "qb3-1.txt",
         "quiz": "b3-1.html"
+      },
+      {
+        "id": "b3-1-answer",
+        "lesson": "Brief quiz answers",
+        "narrative": "quiz.txt",
+        "quiz": "b3-1s.html"
       }
     ]
   },
@@ -376,6 +424,12 @@
         "lesson": "Quiz",
         "narrative": "qb3-2.txt",
         "quiz": "b3-2.html"
+      },
+      {
+        "id": "b3-2-answer",
+        "lesson": "Brief quiz answers",
+        "narrative": "quiz.txt",
+        "quiz": "b3-2s.html"
       }
     ]
   },
@@ -411,6 +465,12 @@
         "lesson": "Quiz",
         "narrative": "qb3-3.txt",
         "quiz": "b3-3.html"
+      },
+      {
+        "id": "b3-3-answer",
+        "lesson": "Brief quiz answers",
+        "narrative": "quiz.txt",
+        "quiz": "b3-3s.html"
       }
     ]
   },
@@ -452,6 +512,12 @@
         "lesson": "Quiz",
         "narrative": "qb4-1.txt",
         "quiz": "b4-1.html"
+      },
+      {
+        "id": "b4-1-answer",
+        "lesson": "Brief quiz answers",
+        "narrative": "quiz.txt",
+        "quiz": "b4-1s.html"
       }
     ]
   },
