@@ -288,7 +288,7 @@
           </div>
         </div>
         <div
-          class="col q-px-xl"
+          class="contentPC col q-px-xl"
           align="left"
           v-if="
             selectContent == 'Quiz' || selectContent == 'Brief quiz answers'
