@@ -304,8 +304,11 @@
         >
           Exam
         </div>
-        <div class="col font64" align="center" v-else>
-          {{ lessonData[indexMenu1].section[indexMenu2].vdo }}
+        <div class="col" align="center" v-else>
+          <div class="q-pa-sm" style="height: 8vh"></div>
+          <div class="">
+            <q-video :ratio="16 / 9" :src="linkVdo" />
+          </div>
         </div>
       </div>
 
@@ -336,6 +339,7 @@ export default {
       indexMenu2: 0,
       narrativeText: "",
       quizText: "",
+      linkVdo: "",
     };
   },
   methods: {
@@ -343,6 +347,9 @@ export default {
       this.indexMenu1 = index1;
       this.indexMenu2 = index2;
       this.selectContent = this.lessonData[index1].section[index2].lesson;
+      this.linkVdo =
+        this.serverpath + "vdo/" + this.lessonData[index1].section[index2].vdo;
+      console.log(this.linkVdo);
       if (
         this.selectContent == "Quiz" ||
         this.selectContent == "Brief quiz answers"
