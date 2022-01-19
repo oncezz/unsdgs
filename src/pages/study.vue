@@ -288,9 +288,11 @@
           </div>
         </div>
         <div
-          class="col font64"
-          align="center"
-          v-if="selectContent == 'Quiz'"
+          class="col q-px-xl"
+          align="left"
+          v-if="
+            selectContent == 'Quiz' || selectContent == 'Brief quiz answers'
+          "
           v-html="quizText"
         >
           <!-- end bar  -->
@@ -341,7 +343,10 @@ export default {
       this.indexMenu1 = index1;
       this.indexMenu2 = index2;
       this.selectContent = this.lessonData[index1].section[index2].lesson;
-      if (this.selectContent == "Quiz") {
+      if (
+        this.selectContent == "Quiz" ||
+        this.selectContent == "Brief quiz answers"
+      ) {
         let data = {
           quiz: this.lessonData[index1].section[index2].quiz,
         };
@@ -383,7 +388,7 @@ export default {
   mounted() {
     this.loadUserData();
     this.lessonData = lessonJson;
-    console.log(this.lessonData);
+    // console.log(this.lessonData);
     this.setIndex(0, 0);
   },
 };

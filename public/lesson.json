@@ -31,6 +31,12 @@
         "lesson": "Quiz",
         "narrative": "quiz.txt",
         "quiz": "a1.html"
+      },
+      {
+        "id": "a1-answer",
+        "lesson": "Brief quiz answers",
+        "narrative": "quiz.txt",
+        "quiz": "a1s.html"
       }
     ]
   },
