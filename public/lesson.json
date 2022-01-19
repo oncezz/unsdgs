@@ -29,7 +29,7 @@
       {
         "id": "a1-quiz",
         "lesson": "Quiz",
-        "narrative": "qa1.txt",
+        "narrative": "quiz.txt",
         "quiz": "a1.html"
       }
     ]
