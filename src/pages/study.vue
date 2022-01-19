@@ -298,15 +298,15 @@
           <!-- end bar  -->
         </div>
         <div
-          class="col font64"
+          class="contentPC col font64"
           align="center"
           v-else-if="selectContent == 'Exam'"
         >
           Exam
         </div>
-        <div class="col" align="center" v-else>
-          <div class="q-pa-sm" style="height: 8vh"></div>
-          <div class="">
+        <div class="col contentPC" align="center" v-else>
+          <!-- <div class="calCenter"></div> -->
+          <div class="" style="">
             <q-video :ratio="16 / 9" :src="linkVdo" />
           </div>
         </div>
@@ -455,6 +455,13 @@ export default {
 .listColor {
   color: #5aadff;
 }
+
+.calCenter {
+  padding-top: calc((100vh - ((100vw - 400px) * 0.5625) - 133px) / 2);
+
+  border: 1px solid red;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
