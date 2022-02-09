@@ -520,14 +520,5 @@
         "quiz": "b4-1s.html"
       }
     ]
-  },
-  {
-    "module": "Exam",
-    "section": [
-      {
-        "id": "exam",
-        "lesson": "Exam"
-      }
-    ]
   }
 ]
