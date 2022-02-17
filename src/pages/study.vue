@@ -349,7 +349,7 @@ export default {
       this.selectContent = this.lessonData[index1].section[index2].lesson;
       this.linkVdo =
         this.serverpath + "vdo/" + this.lessonData[index1].section[index2].vdo;
-      console.log(this.linkVdo);
+      // console.log(this.linkVdo);
       if (
         this.selectContent == "Quiz" ||
         this.selectContent == "Brief quiz answers"
