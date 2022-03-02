@@ -2152,6 +2152,16 @@
                     >
                     Handbook of international economics, 3, pp.1495-1551.
                   </div>
+                  <div class="sortText">
+                    UN ESCAP, 2022.
+                    <a
+                      target="blank"
+                      href="https://www.unescap.org/kp/2022/e-learning-course-sustainable-development-provisions-free-trade-agreements"
+                      >E-learning course on Sustainable Development Provisions
+                      in Regional Trade Agreements.</a
+                    >
+                    22 February 2022.
+                  </div>
                 </q-card-section>
               </q-card>
             </q-expansion-item>
@@ -3092,6 +3102,16 @@
               >International rules and institutions for trade policy.</a
             >
             Handbook of international economics, 3, pp.1495-1551.
+          </div>
+          <div class="sortText">
+            UN ESCAP, 2022.
+            <a
+              target="blank"
+              href="https://www.unescap.org/kp/2022/e-learning-course-sustainable-development-provisions-free-trade-agreements"
+              >E-learning course on Sustainable Development Provisions in
+              Regional Trade Agreements.</a
+            >
+            22 February 2022.
           </div>
           <div class="q-pa-lg"></div>
         </div>

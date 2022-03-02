@@ -56,16 +56,16 @@
       </div>
       <div class="q-px-md font14" style="text-indent: 20px">
         This course employs a non-technical approach to build basic knowledge,
-        mindsets, general capacities of policymakers and a broad range of
+        mindsets, general capacities of policymakers, and a broad range of
         stakeholders to understand the roles and limitations of trade and trade
-        policy in promote a country's achievement of the SDGs. The course
-        consists of 4 basic- and 9 intermediate levels modules. Each module
-        provides multi-media lecture that include an overview of conceptual
+        policy in promoting a country's achievement of the SDGs. The course
+        consists of 4 basic- and 9 intermediate levels modules. Each module a
+        provides multi-media lecture that includes an overview of conceptual
         linkages, cases and examples, and a guide to supplementary readings.
         Upon completing all modules, participants will learn about the linkages
         between trade and sustainable development, especially in the context of
         SDGs. Participants will understand the roles of trade in helping a
-        country to achieve SDGs and aware about issues that influence their
+        country to achieve SDGs and be aware of issues that influence their
         effectiveness, and important points for consideration when designing and
         implementing trade policy for achieving sustainable development.
       </div>
@@ -151,14 +151,14 @@
         This course employs a non-technical approach to build basic knowledge,
         mindsets, general capacities of policymakers and a broad range of
         stakeholders to understand the roles and limitations of trade and trade
-        policy in promote a country's achievement of the SDGs. The course
-        consists of 4 basic- and 9 intermediate levels modules. Each module
-        provides multi-media lecture that include an overview of conceptual
+        policy in promoting a country's achievement of the SDGs. The course
+        consists of 4 basic- and 9 intermediate levels modules. Each module a
+        provides multi-media lecture that includes an overview of conceptual
         linkages, cases and examples, and a guide to supplementary readings.
         Upon completing all modules, participants will learn about the linkages
         between trade and sustainable development, especially in the context of
         SDGs. Participants will understand the roles of trade in helping a
-        country to achieve SDGs and aware about issues that influence their
+        country to achieve SDGs and be aware of issues that influence their
         effectiveness, and important points for consideration when designing and
         implementing trade policy for achieving sustainable development.
       </div>
@@ -252,15 +252,15 @@
             This course employs a non-technical approach to build basic
             knowledge, mindsets, general capacities of policymakers and a broad
             range of stakeholders to understand the roles and limitations of
-            trade and trade policy in promote a country's achievement of the
+            trade and trade policy in promoting a country's achievement of the
             SDGs. The course consists of 4 basic- and 9 intermediate levels
-            modules. Each module provides multi-media lecture that include an
+            modules. Each module a provides multi-media lecture that includes an
             overview of conceptual linkages, cases and examples, and a guide to
             supplementary readings. Upon completing all modules, participants
             will learn about the linkages between trade and sustainable
             development, especially in the context of SDGs. Participants will
             understand the roles of trade in helping a country to achieve SDGs
-            and aware about issues that influence their effectiveness, and
+            and be aware of issues that influence their effectiveness and
             important points for consideration when designing and implementing
             trade policy for achieving sustainable development.
           </div>

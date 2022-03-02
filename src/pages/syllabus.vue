@@ -60,20 +60,20 @@
           trade liberalization, and globalization in contributing to sustainable
           development
         </div>
-        <div class="font18 fontB q-pt-sm">What you’ll learn</div>
+        <div class="font18 fontB q-pt-sm">What you will learn</div>
         <div class="font14">
           <ul class="ulMobile">
             <li>
               Understand the potential role of trade that can contribute to
-              developing countries’ acheivement of the SDGs.
+              developing countries’ achievement of the SDGs.
             </li>
 
             <li>
-              Identify factors that inhibits effective use of trade as a means
-              of implementation.
+              Identify factors that inhibit the effective use of trade as a
+              means of implementation.
             </li>
             <li>
-              Aware about cross-cutting issues that challenge the effectiveness
+              Be aware of cross-cutting issues that challenge the effectiveness
               of trade as an instrument toward the SDGs
             </li>
             <li>
@@ -230,8 +230,7 @@
 
             <q-expansion-item
               group="somegroup"
-              label="Module A.2: Trade and development: tools and trends
-"
+              label="Module A.2: Trade and development: tools and trends"
             >
               <q-card>
                 <q-card-section>
@@ -567,22 +566,22 @@
           />
           <!-- What you'll learn  -->
           <div class="headText q-px-md" style="line-height: 30px">
-            What you'll learn
+            What you will learn
           </div>
         </div>
         <div class="" style="margin-left: 30px">
           <ul>
             <li>
               Understand the potential role of trade that can contribute to
-              developing countries’ acheivement of the SDGs.
+              developing countries’ achievement of the SDGs.
             </li>
 
             <li>
-              Identify factors that inhibits effective use of trade as a means
-              of implementation.
+              Identify factors that inhibit the effective use of trade as a
+              means of implementation.
             </li>
             <li>
-              Aware about cross-cutting issues that challenge the effectiveness
+              Be aware of cross-cutting issues that challenge the effectiveness
               of trade as an instrument toward the SDGs
             </li>
             <li>
@@ -1045,19 +1044,19 @@
           <ul>
             <li>
               Understand the potential role of trade that can contribute to
-              developing countries’ acheivement of the SDGs.
+              developing countries’ achievement of the SDGs.
             </li>
 
             <li>
-              Identify factors that inhibits effective use of trade as a means
-              of implementation.
+              Identify factors that inhibit the effective use of trade as a
+              means of implementation.
             </li>
             <li>
-              Aware about cross-cutting issues that challenge the effectiveness
+              Be aware of cross-cutting issues that challenge the effectiveness
               of trade as an instrument toward the SDGs
             </li>
             <li>
-              Recognize the importance of holistic policy approach as being
+              Recognize the importance of the holistic policy approach as being
               crucial for ensuring trade is a powerful engine for inclusive
               growth and sustainable development.
             </li>
@@ -1102,19 +1101,19 @@
               opportunity and challenges toward sustainable development.
             </li>
             <li>
-              Participants that work, study, or interest in public policy and
-              development will find the course particularly relevant.
+              Participants that work, study, or are interested in public policy
+              and development will find the course particularly relevant.
             </li>
             <li>
-              The total of 13 modules (4 introductory-level modules and 9
-              intermediate-level modules). Approximately, 15-20 minutes per
-              modules. Participants can learn at your own schedule.
+              A total of 13 modules (4 introductory-level modules and 9
+              intermediate-level module). Approximately 15-20 minutes per
+              modules. Participants can learn at their own pace.
             </li>
             <li>
               Participants will earn a shareable certificate after the
-              completion of the following steps: 1) completion of all modules,
-              2) achieve over 70% of the end-course quiz, and 3) submit the
-              e-survey for feedbacks about the course
+              completion of the following steps: 1) complete all modules, 2)
+              achieve over 70% of the end-course quiz, and 3) submit the
+              e-survey for feedback about the course
             </li>
           </ul>
         </div>
@@ -1139,12 +1138,18 @@
           TPFS, ESCAP
           <br />
           Course principal: Ian Coxhead, Professor of Agricultural and Applied
-          Economics, University of Madison
+          Economics, University of Wisconsin-Madison <br />
+          Course assistant: Varan Kitayaporn, PhD Graduate Student, University
+          of Wisconsin-Madison
 
           <br /><br />
           The course is benefit from comments and inputs from the course
           advisory board and ARTNeT advisors:
           <table>
+            <tr>
+              <td>Rupa Chanda</td>
+              <td>Director, TIID, ESCAP</td>
+            </tr>
             <tr>
               <td>Yann Duval</td>
               <td>Chief TPFS, TIID, ESCAP</td>
@@ -1258,7 +1263,7 @@
             overview</b
           >
           <br />This module will introduce the course by conceptually mapping
-          the nexus between trade and the sustainable development goals (SDGs).
+          the nexus between trade and the Sustainable Development Goals (SDGs).
           The module will discuss the mechanisms by which trade can potentially
           influence some SDGs and the mechanisms by which achieving the SDGs can
           influence trade patterns. The module will also highlight that while
@@ -1276,15 +1281,15 @@
           <br />
           <br /><b>Module A.3: Trade and environmental issues </b><br />This
           module will introduce the relationship between trade and the
-          environment. It begins with the conceptual framework, and illustrates
-          this with some examples from trade and environmental issues in the
+          environment. It begins with the conceptual framework and illustrates
+          this with some examples from trade and environmental issues in
           developing countries.
           <br />
           <br /><b>Module A.4: Trade policy reforms and the SDGs </b><br />This
           module reviews trade policy reforms and their interactions with
           efforts to attain SDGs. It includes a discussion of the effects of
           tariffs and tariffs reforms on incomes and income distribution. It
-          continues to a discussion on how trade policy has shifted to address
+          continues with a discussion on how trade policy has shifted to address
           issues of sustainability and inclusive growth. This module spans the
           full range of SDGs.
           <br />
@@ -1301,9 +1306,9 @@
           by which trade affects poverty and inequality before summarising the
           existing empirical evidence on the two. It will touch on multinational
           corporations and outsourcing and their potential effects on poverty
-          and inequality. It will discuss the role that complimentary policies
+          and inequality. It will discuss the role that complementary policies
           may have in allowing the growth-related effects of trade to be
-          channelled toward equitable growth. This module will focus on SDGs: 1,
+          channelled toward equitable growth. This module will focus on SDGs 1,
           2, 3, 4, 5, 8 and 10.
           <br />
           <br /><b
@@ -1314,19 +1319,19 @@
           the notion that some nations restrict trade to achieve this. It will
           critically assess this notion conceptually before highlighting that
           importing food is not (necessarily) a problem. This module will focus
-          on SDGs: 1 and 2.
+          on SDGs 1 and 2.
           <br />
           <br /><b
             >Module B.1.3: Does international trade cause (inclusive) growth?</b
           >
-          <br />This module will begin with an introduction of international
-          trade patterns across the world. It will use measures of openness,
-          tariffs and Non-tariff barriers to show correlations between
-          international trade and economic growth. It will then provide a review
-          of the existing literature on trade and economic growth. It will
-          highlight both potentially positive and negative trade effects on
-          growth and introduce the notion of inclusive growth. This module will
-          focus on SDGs: 1, 3, 4, 5, 8 and 10.
+          <br />This module will begin by introducing international trade
+          patterns across the world. It will use measures of openness, tariffs
+          and non-tariff barriers to show correlations between international
+          trade and economic growth. It will then provide a review of the
+          existing literature on trade and economic growth. It will highlight
+          both potentially positive and negative trade effects on growth and
+          introduce the notion of inclusive growth. This module will focus on
+          SDGs 1, 3, 4, 5, 8 and 10.
 
           <br /><br /><b
             >Part B.2: Trade, climate change and sustainable growth</b
@@ -1347,7 +1352,7 @@
           as a channel to achieve inclusive economic growth and poverty
           reduction. It will then discuss evidence highlighting the
           circumstances that facilitate and impede this process. This module
-          will focus on SDGs: 6,7,11,13,14, and 15.
+          will focus on SDGs 6,7,11,13,14, and 15.
           <br />
           <br /><b
             >Module B.2.2: Trade and sustainability 2: education and
@@ -1356,7 +1361,7 @@
           challenge of sustaining growth in the long run. This module focuses on
           human capital accumulation and the transmission of gains from growth
           and development to the next generation. These are two essential
-          elements in efforts to escape the so-called “middle income trap.” This
+          elements in efforts to escape the so-called “middle-income trap.” This
           module will focus on SDGs: 4, 8 and 11.
           <br />
           <br /><b
@@ -1374,14 +1379,14 @@
           life through higher wages— and increases incentives for labor
           exploitation at the same time. We end our discussion by discussing the
           role of domestic and international institutions in mitigating the
-          undesired effects of trade. This module will focus on SDGs: 8 and 9.
+          undesired effects of trade. This module will focus on SDGs 8 and 9.
           <br />
           <br /><b
             >Module B.3.2: How does trade influence productivity and innovation? </b
           ><br />This module will conceptually discuss how trade can influence
           efficiency and innovation. It will discuss the productivity-enhancing
-          effects of trade, and the complementarities between trade (and FDI)
-          and efforts to reach critical SDGs. This module will focus on SDG 9.
+          effects of trade and the complementarities between trade (and FDI) and
+          efforts to reach critical SDGs. This module will focus on SDG 9.
           <br />
           <br /><b
             >Module B.3.3: Trade and responsible consumption/production</b
@@ -1393,6 +1398,17 @@
           potential effect. It will introduce issues associated with voluntary
           and forced trade standards applied to international supply chains.
           This module will focus on SDG 12.
+          <br />
+          <br /><b
+            >Module B.4.1: Achieving the trade we want: The WTO, trade
+            agreements and NGO-led initiatives?</b
+          >
+          <br />This module will address the role that better institutions and
+          international collaborations can have in influencing trade patterns
+          and their outcomes. It will highlight key initiatives coming out of
+          the WTO, provisions in trade agreements as well as NGO and
+          international organisation initiatives, such as the OECD’s
+          Aid-for-Trade. This module will focus on SDGs 16 and 17.
         </div>
         <!-- references  -->
         <div class="row q-pt-md">
