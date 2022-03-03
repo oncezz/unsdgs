@@ -250,7 +250,7 @@
           </div>
           <div class="q-px-lg font18" style="text-indent: 40px">
             This course employs a non-technical approach to build basic
-            knowledge, mindsets, general capacities of policymakers and a broad
+            knowledge, mindsets, general capacities of policymakers, and a broad
             range of stakeholders to understand the roles and limitations of
             trade and trade policy in promoting a country's achievement of the
             SDGs. The course consists of 4 basic- and 9 intermediate levels

@@ -197,9 +197,7 @@
           International Studies, National University of Malaysia
         </div>
         <div class="font14 q-pt-sm">Pasakorn Thammachote</div>
-        <div class="font12Grey">
-          Faculty of economics, Kasetsart University, Thailand
-        </div>
+        <div class="font12Grey">Faculty of economics, Kasetsart University</div>
         <!-- endNameAndPosition  -->
         <!-- Course content  -->
         <!-- Part A  -->
@@ -1241,7 +1239,10 @@
             </tr>
             <tr>
               <td>Pasakorn Thammachote</td>
-              <td>Faculty of economics, Kasetsart University, Thailand</td>
+              <td>
+                Lecturer, Department of Agricultural and Resource Economics,
+                Faculty of Economics, Kasetsart University
+              </td>
             </tr>
           </table>
         </div>
@@ -1344,10 +1345,10 @@
             environment </b
           ><br />This module will conceptually discuss trade and the goal of
           environmental sustainability. It will focus on whether trade makes the
-          task of dealing with CC effects and maintaining a healthy environment
-          easier or more difficult. <br />The module will also introduce
-          concepts such as sustainable growth and sustainable trade. It will
-          investigate the pros and cons of the nexus between trade and
+          task of dealing with climate change effects and maintaining a healthy
+          environment easier or more difficult. <br />The module will also
+          introduce concepts such as sustainable growth and sustainable trade.
+          It will investigate the pros and cons of the nexus between trade and
           sustainable growth. It will intuitively discuss how trade can be used
           as a channel to achieve inclusive economic growth and poverty
           reduction. It will then discuss evidence highlighting the
@@ -1376,7 +1377,7 @@
           decent work. It begins with an introduction of decent work and labour
           standards. It then discusses labour market consequences of
           international trade. We examine how trade improves workers’ quality of
-          life through higher wages— and increases incentives for labor
+          life through higher wages— and increases incentives for labour
           exploitation at the same time. We end our discussion by discussing the
           role of domestic and international institutions in mitigating the
           undesired effects of trade. This module will focus on SDGs 8 and 9.
@@ -1398,6 +1399,9 @@
           potential effect. It will introduce issues associated with voluntary
           and forced trade standards applied to international supply chains.
           This module will focus on SDG 12.
+          <br />
+          <br /><b>Part B.4: Trade, institutions, and cooperation. </b
+          ><br />This modules focuses on the following SDGs: 16 and 17.
           <br />
           <br /><b
             >Module B.4.1: Achieving the trade we want: The WTO, trade
